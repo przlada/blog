@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Guilherme Toti'
 SITENAME = u'Guilherme Toti'
+SITEDESCRIPTION = u'technology, programming, studies and random stuff'
 SITESUBTITLE = u'technology, programming, studies and random stuff'
 SITEURL = ''
 
@@ -19,6 +20,11 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
+
+# Articles and urls
+FILENAME_METADATA = '(?P<date>\d{4}-\d{2}-\d{2})-(?P<slug>.*)'
+ARTICLE_URL = '{date:%Y}/{date:%m}/{date:%d}/{slug}/'
+ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
 
 # Social widget
 SOCIAL = (
