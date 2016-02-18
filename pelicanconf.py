@@ -31,5 +31,6 @@ THEME = 'theme'
 DEFAULT_PAGINATION = 10
 STATIC_PATHS = ['images', 'extra/CNAME']
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
+ADDTHIS_PUBID = "ra-56c64315810bc72f"
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
