@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/guilherme-toti/blog.svg?branch=master)](https://travis-ci.org/guilherme-toti/blog)
+[![Build Status](https://travis-ci.org/guilherme-toti/blog.svg?branch=pelican)](https://travis-ci.org/guilherme-toti/blog)
 
 # What's this?
 
