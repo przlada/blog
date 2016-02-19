@@ -13,6 +13,7 @@ PATH = 'content'
 TIMEZONE = 'America/Sao_Paulo'
 
 DEFAULT_LANG = u'en'
+LOCALE = ['en_US']
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
