@@ -63,3 +63,4 @@ target/
 
 # Pelican
 output
+publish-key.pub
