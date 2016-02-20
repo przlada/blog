@@ -1,5 +1,5 @@
 Title: Create a simple blog with Python Pelican and Github Pages - Part Two
-Date: 2016-01-19 23:59
+Date: 2016-01-19 22:12
 Category: python
 Tags: python, pelican, github
 
