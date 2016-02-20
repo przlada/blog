@@ -5,7 +5,7 @@ Tags: python, pelican, github
 
 Hey, there!
 
-How has been the python studies? It's going well? What did you learn today? Tell me on comments above :)
+How has been the python studies? It's going well? What did you learn today? Tell me on comments below :)
 
 Well, let's go to the second part of this tutorial.
 
