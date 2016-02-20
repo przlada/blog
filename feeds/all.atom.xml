@@ -1,5 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Guilherme Toti</title><link href="http://www.guilhermetoti.com.br/" rel="alternate"></link><link href="http://www.guilhermetoti.com.br/feeds/all.atom.xml" rel="self"></link><id>http://www.guilhermetoti.com.br/</id><updated>2016-01-18T23:59:00-02:00</updated><entry><title>Create a simple blog with Python Pelican and Github Pages - Part One</title><link href="http://www.guilhermetoti.com.br/2016/01/18/create-a-simple-blog-with-python-pelican-and-github-pages-part-one/" rel="alternate"></link><updated>2016-01-18T23:59:00-02:00</updated><author><name>Guilherme Toti</name></author><id>tag:www.guilhermetoti.com.br,2016-01-18:2016/01/18/create-a-simple-blog-with-python-pelican-and-github-pages-part-one/</id><summary type="html">&lt;p&gt;Hello!&lt;br/&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Guilherme Toti</title><link href="http://www.guilhermetoti.com.br/" rel="alternate"></link><link href="http://www.guilhermetoti.com.br/feeds/all.atom.xml" rel="self"></link><id>http://www.guilhermetoti.com.br/</id><updated>2016-01-19T23:59:00-02:00</updated><entry><title>Create a simple blog with Python Pelican and Github Pages - Part Two</title><link href="http://www.guilhermetoti.com.br/2016/01/19/create-a-simple-blog-with-python-pelican-and-github-pages-part-two/" rel="alternate"></link><updated>2016-01-19T23:59:00-02:00</updated><author><name>Guilherme Toti</name></author><id>tag:www.guilhermetoti.com.br,2016-01-19:2016/01/19/create-a-simple-blog-with-python-pelican-and-github-pages-part-two/</id><summary type="html">&lt;p&gt;Hey, there!&lt;/p&gt;
+&lt;p&gt;How has been the python studies? It's going well? What did you learn today? Tell me on comments above :)&lt;/p&gt;
+&lt;p&gt;Well, let's go to the second part of this tutorial.&lt;/p&gt;
+&lt;p&gt;On the previous part i teach you how to create your simple blog and run locally, right? Alright, now i will teach you how to host it on Github Pages.&lt;/p&gt;
+&lt;p&gt;Basically, to have a Pelican blog on Github Pages, you will have a repository named &lt;code&gt;your-username.github.io&lt;/code&gt; and this repository will have only two branches: &lt;code&gt;pelican&lt;/code&gt; and &lt;code&gt;gh-pages&lt;/code&gt;.&lt;br/&gt;
+The &lt;code&gt;pelican&lt;/code&gt; branch will store the pelican files, like: &lt;code&gt;content&lt;/code&gt;, &lt;code&gt;theme&lt;/code&gt;, &lt;code&gt;plugins&lt;/code&gt;, &lt;code&gt;settings&lt;/code&gt;...&lt;br/&gt;
+The &lt;code&gt;gh-pages&lt;/code&gt; will store the &lt;code&gt;output&lt;/code&gt; content.&lt;/p&gt;
+&lt;p&gt;Let's start.&lt;/p&gt;
+&lt;h1&gt;Login on your Github account&lt;/h1&gt;
+&lt;p&gt;First you need to to login on &lt;a href="https://github.com"&gt;Github website&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;Create a new repository&lt;/h1&gt;
+&lt;p&gt;Now you need to create a new repository, but, there is a special thing, the repository name needs to be:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;your-github-username.github.io
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;On my case, the repository name will be &lt;code&gt;guilherme-toti.github.io&lt;/code&gt;.&lt;/p&gt;
+&lt;h1&gt;Start git locally&lt;/h1&gt;
+&lt;p&gt;After you create your repository, you will see a quick setup page, right?
+Now, on &lt;code&gt;console&lt;/code&gt;, go to you blog folder and type:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(blog) $ git init
+(blog) $ git remote add origin &amp;lt;your_repository_url&amp;gt;
+(blog) $ git checkout -b pelican
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Before we push the changes, let's do a little trick that would save your life, believe me.&lt;br/&gt;
+Create a file named &lt;code&gt;.gitignore&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(blog) $ touch .gitignore
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Open &lt;code&gt;.gitignore&lt;/code&gt; and paste this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# Pelican output folder
+output
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This won't commit the &lt;code&gt;output&lt;/code&gt; folder to branch &lt;code&gt;pelican&lt;/code&gt; and you will have a cleaner branch :)&lt;/p&gt;
+&lt;p&gt;Now, continue, running: &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(blog) $ git add .
+(blog) $ git commit -m &amp;quot;Initial pelican files&amp;quot;
+(blog) $ git push origin pelican
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Let's go step-by-step:&lt;br/&gt;
+&lt;code&gt;$ git init&lt;/code&gt; will start a git repository on this folder&lt;br/&gt;
+&lt;code&gt;$ git remote add origin &amp;lt;your_repository_url&amp;gt;&lt;/code&gt; will add a remote, in this case, your git repository. &lt;em&gt;The repository url is on github quick setup page&lt;/em&gt;&lt;br/&gt;
+&lt;code&gt;$ git checkout -b pelican&lt;/code&gt; will create and go to branch &lt;code&gt;pelican&lt;/code&gt;&lt;br/&gt;
+&lt;code&gt;$ git add .&lt;/code&gt; will prepare your files to next commit&lt;br/&gt;
+&lt;code&gt;$ git commit -m "Initial pelican files"&lt;/code&gt; will commit all your changes&lt;br/&gt;
+&lt;code&gt;# git push origin pelican&lt;/code&gt; will push this commit to the branch pelican. &lt;/p&gt;
+&lt;p&gt;Now, to publish your content you need the pip module &lt;code&gt;ghp-import&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(blog) $ pip install ghp-import
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;Just to remember: It's better to stay on a &lt;code&gt;virtualenv&lt;/code&gt;. &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;After install &lt;code&gt;ghp-import&lt;/code&gt;, run:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(blog) $ make github
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;And there you go! :)&lt;/p&gt;
+&lt;p&gt;Now just wait some seconds and you can access your awesome blog at &lt;code&gt;http://your-github-username.github.io&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Congragulations!! Now you have a pretty cool blog hosted at Github Pages for free! :)&lt;/p&gt;
+&lt;h1&gt;Quick Tips&lt;/h1&gt;
+&lt;p&gt;Every time you change something or create new content you need to run:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(blog) $ git add .
+(blog) $ git commit -m &amp;quot;your commit message&amp;quot;
+(blog) $ git push origin pelican
+(blog) $ make github
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;That's all folks!&lt;/p&gt;</summary><category term="python"></category><category term="pelican"></category><category term="github"></category></entry><entry><title>Create a simple blog with Python Pelican and Github Pages - Part One</title><link href="http://www.guilhermetoti.com.br/2016/01/18/create-a-simple-blog-with-python-pelican-and-github-pages-part-one/" rel="alternate"></link><updated>2016-01-18T23:59:00-02:00</updated><author><name>Guilherme Toti</name></author><id>tag:www.guilhermetoti.com.br,2016-01-18:2016/01/18/create-a-simple-blog-with-python-pelican-and-github-pages-part-one/</id><summary type="html">&lt;p&gt;Hello!&lt;br/&gt;
 For the first post of my blog, why not talk about how to create one blog like this?&lt;br/&gt;
 I will teach you how to create a simple blog using Pelican and host on Github Pages.&lt;br/&gt;
 I'm gonna break this tutorial in &lt;strong&gt;two parts&lt;/strong&gt;, this first part i will teach how to create your blog and at the second part i will teach how to host on Github Pages. Let's start!&lt;/p&gt;
