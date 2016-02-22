@@ -35,6 +35,9 @@ SOCIAL = (
 
 THEME = 'theme'
 
+SIDEBAR_DISPLAY = ['about', 'categories', 'tags']
+SIDEBAR_ABOUT = "Brazilian Software Engineer, 23 years old, radical sports lover and addicted in knowledge. This is me."
+
 DEFAULT_PAGINATION = 10
 STATIC_PATHS = ['images', 'extra/CNAME']
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}

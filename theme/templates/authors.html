@@ -1,35 +1,23 @@
-{% extends "index.html" %}
+﻿{% extends "with-sidebar.html" %}
 
-{% block title %}{{ SITENAME }} - Authors{% endblock title %}
+{% block title %} - Authors{% endblock title %}
 
-{% block header %}
-    <!-- Page Header -->
-    {% if HEADER_COVER %}
-        <header class="intro-header" style="background-image: url('{{ HEADER_COVER }}')">
-    {% else %}
-        <header class="intro-header" style="background-image: url('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/home-bg.jpg')">
-    {% endif %}
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="post-heading">
-                        <h1>Articles by {{ author }}</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-{% endblock header %}
+{% block page_breadcrumbs %}
+<li>Authors</li>
+{% endblock page_breadcrumbs %}
 
 {% block content %}
+    <h3 class="headline">Authors</h3>
+    <span class="line" style="margin-bottom:30px;"></span>
+    <div class="clearfix"></div>
+
     {% for author, articles in authors|sort %}
         <div class="post-preview">
             <a href="{{ SITEURL }}/{{ author.url }}" rel="bookmark">
-                <h2 class="post-title">
+                <p>
                     {{ author }} ({{ articles|count }})
-                </h2>
+                </p>
             </a>
         </div>
-        <hr>
     {% endfor %}
 {% endblock content %}
