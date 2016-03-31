@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Guilherme Toti</title><link href="http://www.guilhermetoti.com/" rel="alternate"></link><link href="http://www.guilhermetoti.com/feeds/python.atom.xml" rel="self"></link><id>http://www.guilhermetoti.com/</id><updated>2016-03-30T23:59:00-03:00</updated><entry><title>Be careful with PIP upgrades!</title><link href="http://www.guilhermetoti.com/2016/03/30/be-careful-with-pip-upgrades/" rel="alternate"></link><updated>2016-03-30T23:59:00-03:00</updated><author><name>Guilherme Toti</name></author><id>tag:www.guilhermetoti.com,2016-03-30:2016/03/30/be-careful-with-pip-upgrades/</id><summary type="html">&lt;p&gt;Hey guys! How are you going?
-It have been a long time since my last post, I was working a lot and I had no time to read more, sorry...&lt;/p&gt;
-&lt;p&gt;On this post I will talk about an experience that my friend and I lived upgrading PIP packages.&lt;/p&gt;
+It's been a long time since my last post, I was working a lot and I had no time to read more, sorry...&lt;/p&gt;
+&lt;p&gt;On this post I will talk about an experience that my friend and I lived at upgrading PIP packages.&lt;/p&gt;
 &lt;h4&gt;The situation&lt;/h4&gt;
-&lt;p&gt;The Magazine Luiza's website was writted with Bottle, and is a bit old, so, as you can imagine, the PIP package's versions are old too.
-We use Jinja2 to render templates, and, we wanted to upgrade some packages just to feel more confortable.
-Well, we saw on &lt;code&gt;requirements&lt;/code&gt; that Jinja2 was on version &lt;code&gt;2.5.5&lt;/code&gt; and the last version was &lt;code&gt;2.8&lt;/code&gt;, so, we just changed the &lt;code&gt;2.5.5&lt;/code&gt; to &lt;code&gt;2.8&lt;/code&gt; and installed the requirements again. &lt;em&gt;Easy, huh?&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;But we didn't expect that this would broke almost everything! But, why?&lt;/p&gt;
+&lt;p&gt;The Magazine Luiza's website was written with Bottle, and is a bit old, so, as you can imagine, the PIP package's versions are old too.
+We use Jinja2 to render templates, and we wanted to upgrade some packages just to feel more confortable.
+Well, we saw in &lt;code&gt;requirements&lt;/code&gt; that Jinja2 was on version &lt;code&gt;2.5.5&lt;/code&gt; and the last version was &lt;code&gt;2.8&lt;/code&gt;, so, we just changed the &lt;code&gt;2.5.5&lt;/code&gt; to &lt;code&gt;2.8&lt;/code&gt; and installed the requirements again. &lt;em&gt;Easy, huh?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;But we didn't expect that this would break almost everything! But, why?&lt;/p&gt;
 &lt;h4&gt;The error&lt;/h4&gt;
-&lt;p&gt;At some templates files, Jinja was throwing the error: &lt;code&gt;non-default argument follows default argument&lt;/code&gt;, but, wtf? We just upgraded to the new version! What's wrong? What have changed?&lt;/p&gt;
+&lt;p&gt;In some templates files, Jinja was throwing the error: &lt;code&gt;non-default argument follows default argument&lt;/code&gt;, but, wtf? We only upgraded to the new version! What's wrong? What have changed?&lt;/p&gt;
 &lt;p&gt;We are almost getting crazy when we decided to search on Google, and, we saw this on &lt;a href="http://jinja.pocoo.org/docs/dev/changelog/#version-2-8"&gt;Jinja2's Version 2.8 Changelog&lt;/a&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;* Added a check for default arguments followed by non-default arguments. This change makes {% macro m(x, y=1, z) %}...{% endmacro %} a syntax error. The previous behavior for this code was broken anyway (resulting in the default value being applied to y).
 &lt;/pre&gt;&lt;/div&gt;
@@ -26,15 +26,15 @@ Well, we saw on &lt;code&gt;requirements&lt;/code&gt; that Jinja2 was on version
 
 &lt;p&gt;So, we had to refactor every piece of code that have this error... &lt;sad&gt;&lt;/p&gt;
 &lt;h4&gt;What to learn with that?&lt;/h4&gt;
-&lt;p&gt;Be careful when upgrading PIP packages, test everything after that, i said EVERYTHING.&lt;/p&gt;
-&lt;p&gt;And, when you install some package, try to put the version in the &lt;code&gt;requirements&lt;/code&gt; file, like:&lt;/p&gt;
+&lt;p&gt;Be careful when upgrading PIP packages, you must test everything after that, i said EVERYTHING.&lt;/p&gt;
+&lt;p&gt;And, when you install some package, always put the version in the &lt;code&gt;requirements&lt;/code&gt; file, like:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Jinja2==2.8
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;If you just put &lt;code&gt;Jinja2&lt;/code&gt; you will always get the last version, but, a simple upgrade can broke your project.&lt;/p&gt;
+&lt;p&gt;If you put only &lt;code&gt;Jinja2&lt;/code&gt; you will always get the last version, but, a simple upgrade can broke your project.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Tip of the day: A no noticeable error can f*ck everything!&lt;/p&gt;
+&lt;p&gt;Tip of the day: One no-noticeable error can f*ck everything!&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;That's all, cya!&lt;/p&gt;</summary><category term="python"></category><category term="pip"></category><category term="upgrades"></category></entry><entry><title>Create a simple blog with Python Pelican and Github Pages - Part Two</title><link href="http://www.guilhermetoti.com/2016/01/19/create-a-simple-blog-with-python-pelican-and-github-pages-part-two/" rel="alternate"></link><updated>2016-01-19T22:12:00-02:00</updated><author><name>Guilherme Toti</name></author><id>tag:www.guilhermetoti.com,2016-01-19:2016/01/19/create-a-simple-blog-with-python-pelican-and-github-pages-part-two/</id><summary type="html">&lt;p&gt;Hey, there!&lt;/p&gt;
 &lt;p&gt;How has been the python studies? It's going well? What did you learn today? Tell me on comments below :)&lt;/p&gt;

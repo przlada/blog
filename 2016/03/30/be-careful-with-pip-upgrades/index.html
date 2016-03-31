@@ -117,15 +117,15 @@
 		</header>
 
 		<p>Hey guys! How are you going?
-It have been a long time since my last post, I was working a lot and I had no time to read more, sorry...</p>
-<p>On this post I will talk about an experience that my friend and I lived upgrading PIP packages.</p>
+It's been a long time since my last post, I was working a lot and I had no time to read more, sorry...</p>
+<p>On this post I will talk about an experience that my friend and I lived at upgrading PIP packages.</p>
 <h4>The situation</h4>
-<p>The Magazine Luiza's website was writted with Bottle, and is a bit old, so, as you can imagine, the PIP package's versions are old too.
-We use Jinja2 to render templates, and, we wanted to upgrade some packages just to feel more confortable.
-Well, we saw on <code>requirements</code> that Jinja2 was on version <code>2.5.5</code> and the last version was <code>2.8</code>, so, we just changed the <code>2.5.5</code> to <code>2.8</code> and installed the requirements again. <em>Easy, huh?</em></p>
-<p>But we didn't expect that this would broke almost everything! But, why?</p>
+<p>The Magazine Luiza's website was written with Bottle, and is a bit old, so, as you can imagine, the PIP package's versions are old too.
+We use Jinja2 to render templates, and we wanted to upgrade some packages just to feel more confortable.
+Well, we saw in <code>requirements</code> that Jinja2 was on version <code>2.5.5</code> and the last version was <code>2.8</code>, so, we just changed the <code>2.5.5</code> to <code>2.8</code> and installed the requirements again. <em>Easy, huh?</em></p>
+<p>But we didn't expect that this would break almost everything! But, why?</p>
 <h4>The error</h4>
-<p>At some templates files, Jinja was throwing the error: <code>non-default argument follows default argument</code>, but, wtf? We just upgraded to the new version! What's wrong? What have changed?</p>
+<p>In some templates files, Jinja was throwing the error: <code>non-default argument follows default argument</code>, but, wtf? We only upgraded to the new version! What's wrong? What have changed?</p>
 <p>We are almost getting crazy when we decided to search on Google, and, we saw this on <a href="http://jinja.pocoo.org/docs/dev/changelog/#version-2-8">Jinja2's Version 2.8 Changelog</a>:</p>
 <div class="highlight"><pre><span></span>* Added a check for default arguments followed by non-default arguments. This change makes {% macro m(x, y=1, z) %}...{% endmacro %} a syntax error. The previous behavior for this code was broken anyway (resulting in the default value being applied to y).
 </pre></div>
@@ -143,15 +143,15 @@ Well, we saw on <code>requirements</code> that Jinja2 was on version <code>2.5.5
 
 <p>So, we had to refactor every piece of code that have this error... <sad></p>
 <h4>What to learn with that?</h4>
-<p>Be careful when upgrading PIP packages, test everything after that, i said EVERYTHING.</p>
-<p>And, when you install some package, try to put the version in the <code>requirements</code> file, like:</p>
+<p>Be careful when upgrading PIP packages, you must test everything after that, i said EVERYTHING.</p>
+<p>And, when you install some package, always put the version in the <code>requirements</code> file, like:</p>
 <div class="highlight"><pre><span></span>Jinja2==2.8
 </pre></div>
 
 
-<p>If you just put <code>Jinja2</code> you will always get the last version, but, a simple upgrade can broke your project.</p>
+<p>If you put only <code>Jinja2</code> you will always get the last version, but, a simple upgrade can broke your project.</p>
 <blockquote>
-<p>Tip of the day: A no noticeable error can f*ck everything!</p>
+<p>Tip of the day: One no-noticeable error can f*ck everything!</p>
 </blockquote>
 <p>That's all, cya!</p>
 
