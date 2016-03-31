@@ -131,8 +131,9 @@ Well, we saw on <code>requirements</code> that Jinja2 was on version <code>2.5.5
 </pre></div>
 
 
+<p>And...?</p>
 <h4>Okay, but, what's wrong?</h4>
-<p>You must be thinking: <code>My gosh, this is stupid, everyone knows the default arguments are always first!</code>.</p>
+<p>You might be thinking: <code>My gosh, this is stupid, everyone knows the default arguments are always first!</code>.</p>
 <p>Yeah, but, like I said, the code is old, and Jinja didn't had this check before, and we have found a lot of <code>macros</code> like that:</p>
 <div class="highlight"><pre><span></span>{% macro test(a, b, c=None, d) -%}
     bla bla bla

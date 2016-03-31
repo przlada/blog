@@ -14,8 +14,9 @@ Well, we saw on &lt;code&gt;requirements&lt;/code&gt; that Jinja2 was on version
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;And...?&lt;/p&gt;
 &lt;h4&gt;Okay, but, what's wrong?&lt;/h4&gt;
-&lt;p&gt;You must be thinking: &lt;code&gt;My gosh, this is stupid, everyone knows the default arguments are always first!&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;You might be thinking: &lt;code&gt;My gosh, this is stupid, everyone knows the default arguments are always first!&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Yeah, but, like I said, the code is old, and Jinja didn't had this check before, and we have found a lot of &lt;code&gt;macros&lt;/code&gt; like that:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;{% macro test(a, b, c=None, d) -%}
     bla bla bla
