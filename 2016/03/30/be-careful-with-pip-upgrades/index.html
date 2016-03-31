@@ -10,7 +10,7 @@
         <meta name="author" content="Guilherme Toti">
 
 
-        <title>Guilherme Toti - Create a simple blog with Python Pelican and Github Pages - Part Two</title>
+        <title>Guilherme Toti - Be careful with PIP upgrades!</title>
 
             <link href="http://www.guilhermetoti.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Guilherme Toti Full Atom Feed" />
             <link href="http://www.guilhermetoti.com/feeds/python.atom.xml" type="application/atom+xml" rel="alternate" title="Guilherme Toti Categories Atom Feed" />
@@ -36,19 +36,19 @@
 
 
         <meta name="tags" contents="python" />
-        <meta name="tags" contents="pelican" />
-        <meta name="tags" contents="github" />
+        <meta name="tags" contents="pip" />
+        <meta name="tags" contents="upgrades" />
 
 	                <meta property="og:locale" content="en_US">
 		<meta property="og:site_name" content="Guilherme Toti">
 
 	<meta property="og:type" content="article">
 	<meta property="article:author" content="">
-	<meta property="og:url" content="http://www.guilhermetoti.com/2016/01/19/create-a-simple-blog-with-python-pelican-and-github-pages-part-two/">
-	<meta property="og:title" content="Create a simple blog with Python Pelican and Github Pages - Part Two">
+	<meta property="og:url" content="http://www.guilhermetoti.com/2016/03/30/be-careful-with-pip-upgrades/">
+	<meta property="og:title" content="Be careful with PIP upgrades!">
 	<meta property="og:description" content="">
 	   <meta property="og:image" content="http://www.guilhermetoti.com/images/guilherme-toti.jpg">
-	<meta property="article:published_time" content="2016-01-19 22:12:00-02:00">
+	<meta property="article:published_time" content="2016-03-30 23:59:00-03:00">
 	</head>
 	<body>
 		<header id="header">
@@ -89,7 +89,7 @@
 								<li>You are here:</li>
 								<li><a href="http://www.guilhermetoti.com/">Home</a></li>
 <li><a href="http://www.guilhermetoti.com/category/python">python</a></li>
-<li>Create a simple blog with Python Pelican and Github Pages - Part Two</li>
+<li>Be careful with PIP upgrades!</li>
 							</ul>
 						</nav>
 					</div>
@@ -109,95 +109,53 @@
 	<section class="post-content">
 
 		<header class="meta">
-			<h2><a href="http://www.guilhermetoti.com/2016/01/19/create-a-simple-blog-with-python-pelican-and-github-pages-part-two/">Create a simple blog with Python Pelican and Github Pages - Part Two</a></h2>
+			<h2><a href="http://www.guilhermetoti.com/2016/03/30/be-careful-with-pip-upgrades/">Be careful with PIP upgrades!</a></h2>
 			<ul>
 				<li>By <a href="http://www.guilhermetoti.com/author/guilherme-toti.html">Guilherme Toti</a></li>
-				<li>Tue 19 January 2016</li>
+				<li>Wed 30 March 2016</li>
 			</ul>
 		</header>
 
-		<p>Hey, there!</p>
-<p>How has been the python studies? It's going well? What did you learn today? Tell me on comments below :)</p>
-<p>Well, let's go to the second part of this tutorial.</p>
-<p>On the previous part i teach you how to create your simple blog and run locally, right? Alright, now i will teach you how to host it on Github Pages.</p>
-<p>Basically, to have a Pelican blog on Github Pages, you will have a repository named <code>your-username.github.io</code> and this repository will have only two branches: <code>pelican</code> and <code>gh-pages</code>.<br/>
-The <code>pelican</code> branch will store the pelican files, like: <code>content</code>, <code>theme</code>, <code>plugins</code>, <code>settings</code>...<br/>
-The <code>gh-pages</code> will store the <code>output</code> content.</p>
-<p>Let's start.</p>
-<h1>Login on your Github account</h1>
-<p>First you need to to login on <a href="https://github.com">Github website</a>.</p>
-<h1>Create a new repository</h1>
-<p>Now you need to create a new repository, but, there is a special thing, the repository name needs to be:</p>
-<div class="highlight"><pre><span></span>your-github-username.github.io
+		<p>Hey guys! How are you going?
+It have been a long time since my last post, I was working a lot and I had no time to read more, sorry...</p>
+<p>On this post I will talk about an experience that my friend and I lived upgrading PIP packages.</p>
+<h4>The situation</h4>
+<p>The Magazine Luiza's website was writted with Bottle, and is a bit old, so, as you can imagine, the PIP package's versions are old too.
+We use Jinja2 to render templates, and, we wanted to upgrade some packages just to feel more confortable.
+Well, we saw on <code>requirements</code> that Jinja2 was on version <code>2.5.5</code> and the last version was <code>2.8</code>, so, we just changed the <code>2.5.5</code> to <code>2.8</code> and installed the requirements again. <em>Easy, huh?</em></p>
+<p>But we didn't expect that this would broke almost everything! But, why?</p>
+<h4>The error</h4>
+<p>At some templates files, Jinja was throwing the error: <code>non-default argument follows default argument</code>, but, wtf? We just upgraded to the new version! What's wrong? What have changed?</p>
+<p>We are almost getting crazy when we decided to search on Google, and, we saw this on <a href="http://jinja.pocoo.org/docs/dev/changelog/#version-2-8">Jinja2's Version 2.8 Changelog</a>:</p>
+<div class="highlight"><pre><span></span>* Added a check for default arguments followed by non-default arguments. This change makes {% macro m(x, y=1, z) %}...{% endmacro %} a syntax error. The previous behavior for this code was broken anyway (resulting in the default value being applied to y).
 </pre></div>
 
 
-<p>On my case, the repository name will be <code>guilherme-toti.github.io</code>.</p>
-<h1>Start git locally</h1>
-<p>After you create your repository, you will see a quick setup page, right?
-Now, on <code>console</code>, go to you blog folder and type:</p>
-<div class="highlight"><pre><span></span>(blog) $ git init
-(blog) $ git remote add origin &lt;your_repository_url&gt;
-(blog) $ git checkout -b pelican
+<h4>Okay, but, what's wrong?</h4>
+<p>You must be thinking: <code>My gosh, this is stupid, everyone knows the default arguments are always first!</code>.</p>
+<p>Yeah, but, like I said, the code is old, and Jinja didn't had this check before, and we have found a lot of <code>macros</code> like that:</p>
+<div class="highlight"><pre><span></span>{% macro test(a, b, c=None, d) -%}
+    bla bla bla
+{%- endmacro  %}
 </pre></div>
 
 
-<p>Before we push the changes, let's do a little trick that would save your life, believe me.<br/>
-Create a file named <code>.gitignore</code>:</p>
-<div class="highlight"><pre><span></span>(blog) $ touch .gitignore
+<p>So, we had to refactor every piece of code that have this error... <sad></p>
+<h4>What to learn with that?</h4>
+<p>Be careful when upgrading PIP packages, test everything after that, i said EVERYTHING.</p>
+<p>And, when you install some package, try to put the version in the <code>requirements</code> file, like:</p>
+<div class="highlight"><pre><span></span>Jinja2==2.8
 </pre></div>
 
 
-<p>Open <code>.gitignore</code> and paste this:</p>
-<div class="highlight"><pre><span></span># Pelican output folder
-output
-</pre></div>
-
-
-<p>This won't commit the <code>output</code> folder to branch <code>pelican</code> and you will have a cleaner branch :)</p>
-<p>Now, continue, running: </p>
-<div class="highlight"><pre><span></span>(blog) $ git add .
-(blog) $ git commit -m &quot;Initial pelican files&quot;
-(blog) $ git push origin pelican
-</pre></div>
-
-
-<p>Let's go step-by-step:<br/>
-<code>$ git init</code> will start a git repository on this folder<br/>
-<code>$ git remote add origin &lt;your_repository_url&gt;</code> will add a remote, in this case, your git repository. <em>The repository url is on github quick setup page</em><br/>
-<code>$ git checkout -b pelican</code> will create and go to branch <code>pelican</code><br/>
-<code>$ git add .</code> will prepare your files to next commit<br/>
-<code>$ git commit -m "Initial pelican files"</code> will commit all your changes<br/>
-<code># git push origin pelican</code> will push this commit to the branch pelican. </p>
-<p>Now, to publish your content you need the pip module <code>ghp-import</code>:</p>
-<div class="highlight"><pre><span></span>(blog) $ pip install ghp-import
-</pre></div>
-
-
+<p>If you just put <code>Jinja2</code> you will always get the last version, but, a simple upgrade can broke your project.</p>
 <blockquote>
-<p>Just to remember: It's better to stay on a <code>virtualenv</code>. </p>
+<p>Tip of the day: A no noticeable error can f*ck everything!</p>
 </blockquote>
-<p>After install <code>ghp-import</code>, run:</p>
-<div class="highlight"><pre><span></span>(blog) $ make github
-</pre></div>
-
-
-<p>And there you go! :)</p>
-<p>Now just wait some seconds and you can access your awesome blog at <code>http://your-github-username.github.io</code>.</p>
-<p>Congragulations!! Now you have a pretty cool blog hosted at Github Pages for free! :)</p>
-<h1>Quick Tips</h1>
-<p>Every time you change something or create new content you need to run:</p>
-<div class="highlight"><pre><span></span>(blog) $ git add .
-(blog) $ git commit -m &quot;your commit message&quot;
-(blog) $ git push origin pelican
-(blog) $ make github
-</pre></div>
-
-
-<p>That's all folks!</p>
+<p>That's all, cya!</p>
 
 		    <div class="tags">
-		        <p>tags: <a href="http://www.guilhermetoti.com/tag/python.html">python</a><a href="http://www.guilhermetoti.com/tag/pelican.html">pelican</a><a href="http://www.guilhermetoti.com/tag/github.html">github</a></p>
+		        <p>tags: <a href="http://www.guilhermetoti.com/tag/python.html">python</a><a href="http://www.guilhermetoti.com/tag/pip.html">pip</a><a href="http://www.guilhermetoti.com/tag/upgrades.html">upgrades</a></p>
 		    </div>
 
 <div class="sharing">
@@ -224,8 +182,8 @@ output
 		        <div id="disqus_thread"></div>
 		        <script type="text/javascript">
 		            var disqus_shortname = 'guilhermetoti';
-		            var disqus_identifier = '2016/01/19/create-a-simple-blog-with-python-pelican-and-github-pages-part-two/';
-		            var disqus_url = 'http://www.guilhermetoti.com/2016/01/19/create-a-simple-blog-with-python-pelican-and-github-pages-part-two/';
+		            var disqus_identifier = '2016/03/30/be-careful-with-pip-upgrades/';
+		            var disqus_url = 'http://www.guilhermetoti.com/2016/03/30/be-careful-with-pip-upgrades/';
 		            (function() {
 		                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 		                dsq.src = '//guilhermetoti.disqus.com/embed.js';
