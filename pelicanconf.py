@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
+from datetime import datetime
 
 AUTHOR = u'Guilherme Toti'
 SITENAME = u'Guilherme Toti'
@@ -30,13 +31,23 @@ ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
 # Social widget
 SOCIAL = (
     ('github', 'https://github.com/guilherme-toti'),
-    ('facebook', 'http://www.facebook.com/GuiMToti'),
+    ('facebook', 'http://www.facebook.com/guilhermetoti'),
 )
 
 THEME = 'theme'
 
+MY_CURRENT_AGE = datetime.now().year - 1992
+
 SIDEBAR_DISPLAY = ['about', 'categories', 'tags']
-SIDEBAR_ABOUT = "Brazilian Software Engineer, 23 years old, radical sports lover and addicted in knowledge. This is me."
+SIDEBAR_ABOUT = """Hello, I'm Guilherme Toti!<br/>
+    I'm a Brazilian Software Engineer
+    from São Paulo - Brazil.<br/>
+    I am a {} years old guy, addicted in learning new stuffs related to
+    technologies.<br/>
+    Also a huge fan of radical sports and my currently hobby is
+    to fly with my drone filming cool cities and beautiful natures!""".format(
+        MY_CURRENT_AGE
+    )
 
 DEFAULT_PAGINATION = 10
 STATIC_PATHS = ['images', 'extra/CNAME']
