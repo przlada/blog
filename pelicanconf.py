@@ -8,6 +8,7 @@ SITENAME = u'Guilherme Toti'
 SITEDESCRIPTION = u'technology, programming, studies and random stuff'
 SITESUBTITLE = u'technology, programming, studies and random stuff'
 SITEURL = ''
+COPYRIGHT = 'Guilherme Toti'
 
 PATH = 'content'
 
