@@ -1,5 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Guilherme Toti</title><link href="http://www.guilhermetoti.com/" rel="alternate"></link><link href="http://www.guilhermetoti.com/feeds/all.atom.xml" rel="self"></link><id>http://www.guilhermetoti.com/</id><updated>2016-03-30T23:59:00-03:00</updated><entry><title>Be careful with PIP upgrades!</title><link href="http://www.guilhermetoti.com/2016/03/30/be-careful-with-pip-upgrades/" rel="alternate"></link><published>2016-03-30T23:59:00-03:00</published><updated>2016-03-30T23:59:00-03:00</updated><author><name>Guilherme Toti</name></author><id>tag:www.guilhermetoti.com,2016-03-30:/2016/03/30/be-careful-with-pip-upgrades/</id><summary type="html">&lt;p&gt;Hey guys! How are you going?
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Guilherme Toti</title><link href="http://www.guilhermetoti.com/" rel="alternate"></link><link href="http://www.guilhermetoti.com/feeds/all.atom.xml" rel="self"></link><id>http://www.guilhermetoti.com/</id><updated>2017-07-07T15:31:00-03:00</updated><entry><title>Using map() in Javascript</title><link href="http://www.guilhermetoti.com/2017/07/07/using-map-in-javascript/" rel="alternate"></link><published>2017-07-07T15:31:00-03:00</published><updated>2017-07-07T15:31:00-03:00</updated><author><name>Guilherme Toti</name></author><id>tag:www.guilhermetoti.com,2017-07-07:/2017/07/07/using-map-in-javascript/</id><summary type="html">&lt;p&gt;Hello guys, how're you doing?
+Hope you're doing great!&lt;/p&gt;
+&lt;p&gt;In this post, I want to talk about the &lt;strong&gt;map()&lt;/strong&gt; function, a function related to &lt;code&gt;Arrays&lt;/code&gt; in Javascript that I use a lot and it's very useful for various situations.&lt;/p&gt;
+&lt;p&gt;I'll show you guys some real-life examples, hope you guys like …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hello guys, how're you doing?
+Hope you're doing great!&lt;/p&gt;
+&lt;p&gt;In this post, I want to talk about the &lt;strong&gt;map()&lt;/strong&gt; function, a function related to &lt;code&gt;Arrays&lt;/code&gt; in Javascript that I use a lot and it's very useful for various situations.&lt;/p&gt;
+&lt;p&gt;I'll show you guys some real-life examples, hope you guys like it!&lt;/p&gt;
+&lt;h2&gt;map()&lt;/h2&gt;
+&lt;p&gt;&lt;br/&gt;The &lt;strong&gt;map()&lt;/strong&gt; function is very useful when you need to translate or change the elements in an Array.
+&lt;br/&gt;It loops through the Array &lt;strong&gt;from left to right&lt;/strong&gt;, creating a new Array, and, for each item, it runs some function that you passed as args, and your function must return an value, so, this return will be the new item of the new Array.&lt;/p&gt;
+&lt;p&gt;Let's see an example below.&lt;/p&gt;
+&lt;p&gt;Imagine that you receive this data from your API:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[
+  {
+    id: 1,
+    name: &amp;#39;John Doe&amp;#39;,
+    location: {
+      city: &amp;#39;São Paulo&amp;#39;,
+      state: &amp;#39;SP&amp;#39;,
+      country: &amp;#39;Brazil&amp;#39;,
+      zipcode: &amp;#39;00000-000&amp;#39;
+    }
+  },
+  {
+    id: 2,
+    name: &amp;#39;Doe John&amp;#39;,
+    location: {
+      city: &amp;#39;Rio de Janeiro&amp;#39;,
+      state: &amp;#39;RJ&amp;#39;,
+      country: &amp;#39;Brazil&amp;#39;,
+      zipcode: &amp;#39;11111-111&amp;#39;
+    }
+  },
+  {
+    id: 3,
+    name: &amp;#39;Joe Dohn&amp;#39;,
+    location: {
+      city: &amp;#39;Curitiba&amp;#39;,
+      state: &amp;#39;SP&amp;#39;,
+      country: &amp;#39;Brazil&amp;#39;,
+      zipcode: &amp;#39;123456-789&amp;#39;
+    }
+  }
+]
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;br/&gt;So, you have an array of objects with:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;- user id
+- name
+- location
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;br/&gt;Let's figure out we don't need all this data, we need only an array with objects like:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;{
+  id: 1,
+  name: &amp;#39;John Doe&amp;#39;,
+  city: &amp;#39;São Paulo&amp;#39;
+}
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;br/&gt;Problably, to resolve that, you may be thinking in something like:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;let newData = [];
+
+for (var index in data) {
+  const user = data[index];
+
+  newData.push({
+    id: user.id,
+    name: user.name,
+    city: user.location.city
+  })
+};
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;br/&gt;Right?
+&lt;br/&gt;It isn't wrong, and it's works, but, there is a lot of steps, and, we can do it better!
+&lt;br/&gt;&lt;br/&gt;Doing that way, you are:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;1. Instancing a new variable;
+2. Doing a `for` loop through the `data` Array, getting each index`;
+3. Using this `index` to access the current element of the Array;
+4. Pushing the new object to the variable previously created;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;br/&gt;The &lt;strong&gt;map()&lt;/strong&gt; function provides an easy way to do exactly this and with less steps!
+&lt;br/&gt;&lt;br/&gt;Check below how to write the same using &lt;strong&gt;map()&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;const newData = data.map(function(item) {
+  return {
+    id: item.id,
+    name: item.name,
+    city: item.location.city
+  }
+});
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;br/&gt;Maybe your reaction be like:
+&lt;img alt="WTF" src="http://www.guilhermetoti.com/images/wtf.gif"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br/&gt;But, keep calm, i'll explain every step!
+&lt;br/&gt;&lt;br/&gt;When you execute &lt;strong&gt;Array.map()&lt;/strong&gt;, to clear your mind in a &lt;em&gt;real-life&lt;/em&gt; example, you can think in something like:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;1. The map() gets your Array;
+2. Loop through it, and, for each item it:
+   1. Execute the function you&amp;#39;ve passed, passing the current item as an argument;
+   2. Update the current item value, to the returned value from your function;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;br/&gt;So, this also can be re-written to something like:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;parseItem&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;item&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;id&lt;/span&gt;: &lt;span class="kt"&gt;item.id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nx"&gt;name&lt;/span&gt;: &lt;span class="kt"&gt;item.name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nx"&gt;city&lt;/span&gt;: &lt;span class="kt"&gt;item.location.city&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;newData&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;data&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;map&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;parseItem&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;br/&gt;It will produce the same result and has the same effect.&lt;/p&gt;
+&lt;p&gt;And if you're familiar with ES6, you can re-write it to:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;const&lt;/span&gt; &lt;span class="nt"&gt;newData&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nt"&gt;data&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;map&lt;/span&gt;&lt;span class="o"&gt;((&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="err"&gt;id,&lt;/span&gt; &lt;span class="err"&gt;name,&lt;/span&gt; &lt;span class="n"&gt;location&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="err"&gt;{&lt;/span&gt; &lt;span class="n"&gt;city&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="err"&gt;}&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="err"&gt;id,&lt;/span&gt; &lt;span class="err"&gt;name,&lt;/span&gt; &lt;span class="err"&gt;city&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="o"&gt;));&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;br/&gt;But i'll not talk about ES6 now, maybe in another post! :P
+&lt;br/&gt;&lt;br/&gt;Using any of the examples above, if you run a &lt;strong&gt;console.log(newData)&lt;/strong&gt;, you will receive:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[
+  {
+    &amp;quot;id&amp;quot;: 1,
+    &amp;quot;name&amp;quot;: &amp;quot;John Doe&amp;quot;,
+    &amp;quot;city&amp;quot;: &amp;quot;São Paulo&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: 2,
+    &amp;quot;name&amp;quot;: &amp;quot;Doe John&amp;quot;,
+    &amp;quot;city&amp;quot;: &amp;quot;Rio de Janeiro&amp;quot;
+  },
+  {
+    &amp;quot;id&amp;quot;: 3,
+    &amp;quot;name&amp;quot;: &amp;quot;Joe Dohn&amp;quot;,
+    &amp;quot;city&amp;quot;:&amp;quot;Curitiba&amp;quot;
+  }
+]
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;br/&gt;So, that's it guys, as expected!!
+&lt;br/&gt;You can see the &lt;strong&gt;JSFiddle&lt;/strong&gt; of this post &lt;a href="https://jsfiddle.net/guilhermetoti/bju032cw/" target="_blank"&gt;here&lt;/a&gt;
+&lt;br/&gt;&lt;br/&gt;I hope you guys understand about the &lt;strong&gt;map()&lt;/strong&gt; function, but, if you have any questions please comment below!&lt;/p&gt;</content><category term="javascript"></category><category term="functional programming"></category></entry><entry><title>Be careful with PIP upgrades!</title><link href="http://www.guilhermetoti.com/2016/03/30/be-careful-with-pip-upgrades/" rel="alternate"></link><published>2016-03-30T23:59:00-03:00</published><updated>2016-03-30T23:59:00-03:00</updated><author><name>Guilherme Toti</name></author><id>tag:www.guilhermetoti.com,2016-03-30:/2016/03/30/be-careful-with-pip-upgrades/</id><summary type="html">&lt;p&gt;Hey guys! How are you going?
 It have been a long time since my last post, I was working a lot and I had no time to read more, sorry...&lt;/p&gt;
 &lt;p&gt;On this post I will talk about an experience that my friend and I lived upgrading PIP packages.&lt;/p&gt;
 &lt;h4&gt;The situation …&lt;/h4&gt;</summary><content type="html">&lt;p&gt;Hey guys! How are you going?
