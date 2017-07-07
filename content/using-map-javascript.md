@@ -1,6 +1,7 @@
 Title: Using map() in Javascript
 Summary: Learn how to use this simple and powerful javascript function called .map with easy and real-life examples.
 Date: 2017-07-07 15:31
+Image: js-logo.png
 Category: javascript
 Tags: javascript, functional programming
 
