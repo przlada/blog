@@ -1,14 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Guilherme Toti</title><link href="http://www.guilhermetoti.com/" rel="alternate"></link><link href="http://www.guilhermetoti.com/feeds/all.atom.xml" rel="self"></link><id>http://www.guilhermetoti.com/</id><updated>2017-07-07T15:31:00-03:00</updated><entry><title>Using map() in Javascript</title><link href="http://www.guilhermetoti.com/2017/07/07/using-map-in-javascript/" rel="alternate"></link><published>2017-07-07T15:31:00-03:00</published><updated>2017-07-07T15:31:00-03:00</updated><author><name>Guilherme Toti</name></author><id>tag:www.guilhermetoti.com,2017-07-07:/2017/07/07/using-map-in-javascript/</id><summary type="html">&lt;p&gt;Learn how to use this simple and powerful javascript function called .map with easy and real-life examples.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hello guys, how're you doing?
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Guilherme Toti</title><link href="http://www.guilhermetoti.com/" rel="alternate"></link><link href="http://www.guilhermetoti.com/feeds/all.atom.xml" rel="self"></link><id>http://www.guilhermetoti.com/</id><updated>2017-07-09T23:38:00-03:00</updated><entry><title>Using filter() in Javascript</title><link href="http://www.guilhermetoti.com/2017/07/09/using-filter-in-javascript/" rel="alternate"></link><published>2017-07-09T23:38:00-03:00</published><updated>2017-07-09T23:38:00-03:00</updated><author><name>Guilherme Toti</name></author><id>tag:www.guilhermetoti.com,2017-07-09:/2017/07/09/using-filter-in-javascript/</id><summary type="html">&lt;p&gt;Learn how to easily filter Arrays using the Array.prototype.filter method!&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hey, what's up?!&lt;/p&gt;
+&lt;p&gt;Today I want to teach you guys how to easily filter &lt;strong&gt;Arrays&lt;/strong&gt; using the &lt;a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter" target="_blank"&gt;Array.prototype.filter&lt;/a&gt; method.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;filter()&lt;/strong&gt; method it's very simple to implement but it's also very powerful and helpful way to filter your data.&lt;/p&gt;
+&lt;p&gt;In this article, I'll use the same example data object that I used on my previous article, about the &lt;a title="Check my last article about map() in javascript" href="http://guilhermetoti.com/2017/07/07/using-map-in-javascript/" target="_blank"&gt;map()&lt;/a&gt; method.&lt;/p&gt;
+&lt;p&gt;So, the example data object is:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;const data = [
+  {
+    id: 1,
+    name: &amp;#39;John Doe&amp;#39;,
+    location: {
+      city: &amp;#39;São Paulo&amp;#39;,
+      state: &amp;#39;SP&amp;#39;,
+      country: &amp;#39;Brazil&amp;#39;,
+      zipcode: &amp;#39;00000-000&amp;#39;
+    }
+  },
+  {
+    id: 2,
+    name: &amp;#39;Doe John&amp;#39;,
+    location: {
+      city: &amp;#39;Rio de Janeiro&amp;#39;,
+      state: &amp;#39;RJ&amp;#39;,
+      country: &amp;#39;Brazil&amp;#39;,
+      zipcode: &amp;#39;11111-111&amp;#39;
+    }
+  },
+  {
+    id: 3,
+    name: &amp;#39;Joe Dohn&amp;#39;,
+    location: {
+      city: &amp;#39;Curitiba&amp;#39;,
+      state: &amp;#39;SP&amp;#39;,
+      country: &amp;#39;Brazil&amp;#39;,
+      zipcode: &amp;#39;123456-789&amp;#39;
+    }
+  }
+]
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;br/&gt;Let's imagine that you want to get from this array, only the objects where the &lt;strong&gt;location.state&lt;/strong&gt; are equal to &lt;strong&gt;SP&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Maybe on a first approach, you might be thinking on something like:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;let newData = [];
+
+for (let index in data) {
+  const currentElement = data[index];
+  if (currentElement.location.state === &amp;#39;SP&amp;#39;) {
+    newData.push(currentElement);
+  }
+}
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;br/&gt;It would work, right? Right, but, we are creating another variable to handle the new data and looping through the &lt;strong&gt;data&lt;/strong&gt; object, searching for a state equal to &lt;strong&gt;SP&lt;/strong&gt; and then, pushing this object to the new variable.&lt;/p&gt;
+&lt;p&gt;I think we can do better than this, dont we?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Yes! We can do it better!&lt;/strong&gt; Using the &lt;strong&gt;filter()&lt;/strong&gt; method!&lt;/p&gt;
+&lt;p&gt;Let's see how it would be written using the &lt;strong&gt;filter()&lt;/strong&gt; method:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;const newData = data.filter(function(currentElement) {
+  return currentElement.location.state === &amp;#39;SP&amp;#39;;
+});
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;br/&gt;The basic idea of the &lt;strong&gt;filter()&lt;/strong&gt; method is:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;- Pass to the filter() method a function who:
+  - Receives the current element of the data array you&amp;#39;re filtering;
+  - Do your logic;
+  - Returns a boolean;
+- The filter() method will loop through the data array executing your function and passing each element of the array as a param;
+- If your function has returned true, then the current element will be added to the new array;
+- Otherwise it will be just ignored;
+- Returns the new array with the filtered data;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;br/&gt;And if you are learning about &lt;strong&gt;ES6&lt;/strong&gt;, the same code could be written as:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;const newData = data.filter((currentElement) =&amp;gt; currentElement.location.state === &amp;#39;SP&amp;#39;);
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;br/&gt;Cool, huh? :D
+&lt;br/&gt; You can see the &lt;strong&gt;JSFiddle&lt;/strong&gt; of this article &lt;a href="https://jsfiddle.net/guilhermetoti/ab4gpvvt/" target="_blank"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Problably at this moment you must be thinking about your old codes and how to refactor them to use the &lt;strong&gt;filter()&lt;/strong&gt; method, right?&lt;/p&gt;
+&lt;p&gt;Well, I hope so!&lt;/p&gt;
+&lt;p&gt;That's it! If you guys have some question, please comment below!&lt;/p&gt;</content><category term="javascript"></category><category term="functional programming"></category></entry><entry><title>Using map() in Javascript</title><link href="http://www.guilhermetoti.com/2017/07/07/using-map-in-javascript/" rel="alternate"></link><published>2017-07-07T15:31:00-03:00</published><updated>2017-07-07T15:31:00-03:00</updated><author><name>Guilherme Toti</name></author><id>tag:www.guilhermetoti.com,2017-07-07:/2017/07/07/using-map-in-javascript/</id><summary type="html">&lt;p&gt;Learn how to use this simple and powerful javascript function called .map with easy and real-life examples.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hello guys, how're you doing?
 Hope you're doing great!&lt;/p&gt;
-&lt;p&gt;In this post, I want to talk about the &lt;strong&gt;&lt;a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank"&gt;map()&lt;/a&gt;&lt;/strong&gt; function, a function related to &lt;code&gt;Arrays&lt;/code&gt; in Javascript that I use a lot and it's very useful for various situations.&lt;/p&gt;
+&lt;p&gt;In this post, I want to talk about the &lt;strong&gt;&lt;a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank"&gt;map()&lt;/a&gt;&lt;/strong&gt; function, a function related to &lt;code&gt;Arrays&lt;/code&gt; in Javascript that I use a lot and it's very useful for various situations.&lt;/p&gt;
 &lt;p&gt;I'll show you guys some real-life examples, hope you guys like it!&lt;/p&gt;
 &lt;h2&gt;map()&lt;/h2&gt;
 &lt;p&gt;&lt;br/&gt;The &lt;strong&gt;map()&lt;/strong&gt; function is very useful when you need to translate or change the elements in an Array.
 &lt;br/&gt;It loops through the Array &lt;strong&gt;from left to right&lt;/strong&gt;, creating a new Array, and, for each item, it runs some function that you passed as args, and your function must return an value, so, this return will be the new item of the new Array.&lt;/p&gt;
 &lt;p&gt;Let's see an example below.&lt;/p&gt;
 &lt;p&gt;Imagine that you receive this data from your API:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;const data = [
   {
     id: 1,
     name: &amp;#39;John Doe&amp;#39;,
