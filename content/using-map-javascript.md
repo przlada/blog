@@ -8,7 +8,7 @@ Tags: javascript, functional programming
 Hello guys, how're you doing?
 Hope you're doing great!
 
-In this post, I want to talk about the **<a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank">map()</a>** function, a function related to `Arrays` in Javascript that I use a lot and it's very useful for various situations.
+In this post, I want to talk about the **<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank">map()</a>** function, a function related to `Arrays` in Javascript that I use a lot and it's very useful for various situations.
 
 I'll show you guys some real-life examples, hope you guys like it!
 
@@ -20,7 +20,7 @@ Let's see an example below.
 
 Imagine that you receive this data from your API:
 ```
-[
+const data = [
   {
     id: 1,
     name: 'John Doe',
