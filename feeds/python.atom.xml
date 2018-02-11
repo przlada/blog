@@ -49,16 +49,16 @@ Well, we saw on &lt;code&gt;requirements&lt;/code&gt; that Jinja2 was on version
 The &lt;code&gt;pelican&lt;/code&gt; branch will store the pelican files, like: &lt;code&gt;content&lt;/code&gt;, &lt;code&gt;theme&lt;/code&gt;, &lt;code&gt;plugins&lt;/code&gt;, &lt;code&gt;settings&lt;/code&gt;...&lt;br/&gt;
 The &lt;code&gt;gh-pages&lt;/code&gt; will store the &lt;code&gt;output&lt;/code&gt; content.&lt;/p&gt;
 &lt;p&gt;Let's start.&lt;/p&gt;
-&lt;h1&gt;Login on your Github account&lt;/h1&gt;
+&lt;h3&gt;Login on your Github account&lt;/h3&gt;
 &lt;p&gt;First you need to to login on &lt;a href="https://github.com"&gt;Github website&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;Create a new repository&lt;/h1&gt;
+&lt;h3&gt;Create a new repository&lt;/h3&gt;
 &lt;p&gt;Now you need to create a new repository, but, there is a special thing, the repository name needs to be:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;your-github-username.github.io
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;On my case, the repository name will be &lt;code&gt;guilherme-toti.github.io&lt;/code&gt;.&lt;/p&gt;
-&lt;h1&gt;Start git locally&lt;/h1&gt;
+&lt;h3&gt;Start git locally&lt;/h3&gt;
 &lt;p&gt;After you create your repository, you will see a quick setup page, right?
 Now, on &lt;code&gt;console&lt;/code&gt;, go to you blog folder and type:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(blog) $ git init
@@ -74,7 +74,7 @@ Create a file named &lt;code&gt;.gitignore&lt;/code&gt;:&lt;/p&gt;
 
 
 &lt;p&gt;Open &lt;code&gt;.gitignore&lt;/code&gt; and paste this:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# Pelican output folder
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;### Pelican output folder
 output
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -93,7 +93,7 @@ output
 &lt;code&gt;$ git checkout -b pelican&lt;/code&gt; will create and go to branch &lt;code&gt;pelican&lt;/code&gt;&lt;br/&gt;
 &lt;code&gt;$ git add .&lt;/code&gt; will prepare your files to next commit&lt;br/&gt;
 &lt;code&gt;$ git commit -m "Initial pelican files"&lt;/code&gt; will commit all your changes&lt;br/&gt;
-&lt;code&gt;# git push origin pelican&lt;/code&gt; will push this commit to the branch pelican. &lt;/p&gt;
+&lt;code&gt;### git push origin pelican&lt;/code&gt; will push this commit to the branch pelican. &lt;/p&gt;
 &lt;p&gt;Now, to publish your content you need the pip module &lt;code&gt;ghp-import&lt;/code&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(blog) $ pip install ghp-import
 &lt;/pre&gt;&lt;/div&gt;
@@ -110,7 +110,7 @@ output
 &lt;p&gt;And there you go! :)&lt;/p&gt;
 &lt;p&gt;Now just wait some seconds and you can access your awesome blog at &lt;code&gt;http://your-github-username.github.io&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Congragulations!! Now you have a pretty cool blog hosted at Github Pages for free! :)&lt;/p&gt;
-&lt;h1&gt;Quick Tips&lt;/h1&gt;
+&lt;h3&gt;Quick Tips&lt;/h3&gt;
 &lt;p&gt;Every time you change something or create new content you need to run:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(blog) $ git add .
 (blog) $ git commit -m &amp;quot;your commit message&amp;quot;
@@ -126,11 +126,11 @@ I'm gonna break this tutorial in &lt;strong&gt;two parts&lt;/strong&gt;, this fi
 For the first post of my blog, why not talk about how to create one blog like this?&lt;br/&gt;
 I will teach you how to create a simple blog using Pelican and host on Github Pages.&lt;br/&gt;
 I'm gonna break this tutorial in &lt;strong&gt;two parts&lt;/strong&gt;, this first part i will teach how to create your blog and at the second part i will teach how to host on Github Pages. Let's start!&lt;/p&gt;
-&lt;h1&gt;What's Pelican?&lt;/h1&gt;
+&lt;h3&gt;What's Pelican?&lt;/h3&gt;
 &lt;p&gt;&lt;em&gt;"Pelican is a static site generator, written in Python, that requires no database or server-side logic."&lt;/em&gt; &lt;a href="http://blog.getpelican.com/"&gt;From Pelican's website&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;What's the logic?&lt;/h1&gt;
+&lt;h3&gt;What's the logic?&lt;/h3&gt;
 &lt;p&gt;You just need to write &lt;code&gt;markdown&lt;/code&gt; files and this will be your pages and/or posts.&lt;br/&gt; Pelican will do all the magic :)&lt;/p&gt;
-&lt;h1&gt;Cool! How do i start?&lt;/h1&gt;
+&lt;h3&gt;Cool! How do i start?&lt;/h3&gt;
 &lt;p&gt;So, first of all, you need to ensure that you have &lt;a href="https://www.python.org" title="How to install Python"&gt;python&lt;/a&gt;, &lt;a href="https://pip.pypa.io/en/stable/installing/" title="How to install Pip"&gt;pip&lt;/a&gt; and &lt;a href="https://virtualenvwrapper.readthedocs.org" title="How to install Virtualenvwrapper"&gt;virtualenvwrapper&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Let's assume that you already installed everything.&lt;/p&gt;
 &lt;p&gt;First of all, let's create the blog directory and go to folder:&lt;/p&gt;
@@ -178,7 +178,7 @@ I'm gonna break this tutorial in &lt;strong&gt;two parts&lt;/strong&gt;, this fi
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Don't know your timezone? Maybe this &lt;a href="http://php.net/manual/en/timezones.php"&gt;link&lt;/a&gt; will help you.&lt;/strong&gt; (I know it's &lt;code&gt;PHP&lt;/code&gt;, but it will really help :P)&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2&gt;The cool part, writing posts&lt;/h2&gt;
+&lt;h4&gt;The cool part, writing posts&lt;/h4&gt;
 &lt;p&gt;Now you can check that you have a folder called &lt;code&gt;content&lt;/code&gt;, right?&lt;br/&gt;
 This folder is where your content must be.&lt;br/&gt;
 Let's start creating a simple hello world.&lt;br/&gt;&lt;/p&gt;
@@ -209,7 +209,7 @@ Let's start creating a simple hello world.&lt;br/&gt;&lt;/p&gt;
 &lt;p&gt;Every markdown file here need to have a minimal header as you can see above.&lt;br/&gt;
 You need to have at least &lt;code&gt;Title&lt;/code&gt;, &lt;code&gt;Date&lt;/code&gt; and &lt;code&gt;Category&lt;/code&gt;.&lt;br/&gt;
 Everything you write after the header will be the post content.&lt;/p&gt;
-&lt;h2&gt;Nice, i feel's like a writer but how to make it work now?&lt;/h2&gt;
+&lt;h4&gt;Nice, i feel's like a writer but how to make it work now?&lt;/h4&gt;
 &lt;p&gt;This is the most simple part, after write your post(s), you just need to:&lt;/p&gt;
 &lt;p&gt;If you are on &lt;code&gt;content&lt;/code&gt; folder, first you need go back to root folder:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(blog) $ cd ..
@@ -225,7 +225,7 @@ Everything you write after the header will be the post content.&lt;/p&gt;
 &lt;code&gt;Done: Processed 1 articles, 0 drafts, 0 pages and 0 hidden pages in 0.25 seconds.&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;This command will take every markdown file under &lt;code&gt;content&lt;/code&gt; folder and generate the &lt;code&gt;html&lt;/code&gt; pages on &lt;code&gt;output&lt;/code&gt; folder.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Easy, huh?&lt;/em&gt;&lt;/p&gt;
-&lt;h2&gt;That's awesome, but, i'm not ready to push yet, how can i check it locally?&lt;/h2&gt;
+&lt;h4&gt;That's awesome, but, i'm not ready to push yet, how can i check it locally?&lt;/h4&gt;
 &lt;p&gt;To run your blog locally simple run:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(blog) $ make serve
 &lt;/pre&gt;&lt;/div&gt;
@@ -234,7 +234,7 @@ Everything you write after the header will be the post content.&lt;/p&gt;
 &lt;p&gt;And go check your awesome blog in: &lt;a href="http://localhost:8000"&gt;http://localhost:8000&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Now you have a really nice blog running locally!
 On the next post i will teach how to host it on Github Pages.&lt;/p&gt;
-&lt;h1&gt;Tips:&lt;/h1&gt;
+&lt;h3&gt;Tips:&lt;/h3&gt;
 &lt;p&gt;If you don't want to run &lt;code&gt;pelican content&lt;/code&gt; everytime you change a markdown file, you can run (&lt;em&gt;from root folder&lt;/em&gt;):&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(blog) $ make regenerate
 &lt;/pre&gt;&lt;/div&gt;

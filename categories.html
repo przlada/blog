@@ -1,38 +1,57 @@
 ﻿<!DOCTYPE html>
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<html lang="en">
-<!--<![endif]-->
-	<head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <meta name="author" content="Guilherme Toti">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Guilherme Toti">
+
+    <meta name="description" content="">
+    <meta name="keywords" content="">
 
 
-        <title>Guilherme Toti - Categories</title>
+    <title>Guilherme Toti - Categories</title>
 
-            <link href="http://www.guilhermetoti.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Guilherme Toti Full Atom Feed" />
+        <link href="http://www.guilhermetoti.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Guilherme Toti Full Atom Feed" />
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="http://www.guilhermetoti.com/theme/css/style.css">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="http://www.guilhermetoti.com/theme/css/bootstrap.min.css">
 
-        <!-- Custom CSS -->
-        	<link rel="stylesheet" href="http://www.guilhermetoti.com/theme/css/colors/blue.css" id="colors">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Muli:200,300,400,600,700,,800,900|Josefin+Sans:300,400,600,700" rel="stylesheet">
 
-        <!-- Code highlight color scheme -->
-            <link href="http://www.guilhermetoti.com/theme/css/code_blocks/darkly.css" rel="stylesheet">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="http://www.guilhermetoti.com/theme/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="http://www.guilhermetoti.com/theme/css/owl.theme.default.min.css">
 
+    <!-- magnific-popup CSS -->
+    <link rel="stylesheet" href="http://www.guilhermetoti.com/theme/css/magnific-popup.css">
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
+    <!-- Font Icon Core CSS -->
+    <link rel="stylesheet" href="http://www.guilhermetoti.com/theme/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://www.guilhermetoti.com/theme/css/et-line.css">
+    <link rel="stylesheet" href="http://www.guilhermetoti.com/theme/css/ionicons.min.css">
 
-                <meta property="og:locale" content="en_US">
-		<meta property="og:site_name" content="Guilherme Toti">
+    <!-- Core Style Css -->
+    <link rel="stylesheet" href="http://www.guilhermetoti.com/theme/css/style.css">
+
+    <!--[if lt IE 9]-->
+    <script src="http://www.guilhermetoti.com/theme/js/html5shiv.min.js"></script>
+    <!--[endif]-->
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+            <meta property="og:locale" content="en_US">
+        <meta property="og:site_name" content="Guilherme Toti">
+
     <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-39972528-7']);
@@ -43,135 +62,179 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
     </script>
-	</head>
-	<body>
-		<header id="header">
-			<!-- Container -->
-			<div class="container">
-				<!-- Logo / Mobile Menu -->
-				<div class="five columns">
-					<div id="textlogo">
-						<h1><a href="http://www.guilhermetoti.com/">Guilherme Toti</a></h1>
-					</div>
-				</div>
-						<!-- Navigation
-				================================================== -->
-				<div class="eleven columns">
 
-					<nav id="navigation" class="menu">
-						<ul id="responsive">
+    </head>
+    <body>
+        <!-- ====== Preloader ======  -->
+        <div class="loading">
+            <div class="load-circle"></div>
+        </div>
+        <!-- ======End Preloader ======  -->
 
-							<li><a href="http://www.guilhermetoti.com/">Home</a></li>
+        <!-- ====== button-top ======  -->
+        <div class="button-top" data-scroll-nav="0">
+            <span><i class="fa fa-angle-up" aria-hidden="true"></i></span>
+        </div>
+        <!-- ======End button-top ======  -->
+
+        <!-- ====== Navgition ======  -->
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-icon-collapse" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <!-- logo -->
+                <a href="http://www.guilhermetoti.com/">
+                    <div class="logo">
+                        <h1>Guilherme Toti</h1>
+                    </div>
+                </a>
+
+                </div>
+
+                <!-- Collect the nav links, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="nav-icon-collapse">
+                <!-- links -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="http://www.guilhermetoti.com/" >Home</a></li>
 
 
-							        <li><a href="http://www.guilhermetoti.com/pages/about.html">About</a></li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-			<!-- Container / End -->
-		</header>
-		<!-- Header / End -->
+                            <li><a href="http://www.guilhermetoti.com/pages/sobre.html" >Sobre</a></li>
+                </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container -->
+            </nav>
+            <!-- ====== End Navgition ======  -->
 
-		<!-- Breadcrumbs Container-->
-		<div id="content-wrapper">
-			<section id="titlebar">
-				<!-- Container -->
-				<div class="container">
-				<div class="thirteen columns">
-					<nav id="breadcrumbs">
-						<ul>
-							<li>You are here:</li>
-							<li><a href="http://www.guilhermetoti.com/">Home</a></li>
-<li>Categories</li>
-						</ul>
-					</nav>
-				</div>
-				</div>
-				<!-- Container / End -->
-			</section>
+            <!--====== Header ======-->
+            <section class="sub-header">
+                <div class="container">
+                    <div class="v-middle">
 
-			<div class="container">
-	<div class="twelve alt columns">
-	<h3 class="headline">Categories</h3>
-	<span class="line" style="margin-bottom:30px;"></span>
-	<div class="clearfix"></div>
-	
-    <ul>
-        <li><a href="http://www.guilhermetoti.com/category/javascript.html">javascript</a></li>
-        <li><a href="http://www.guilhermetoti.com/category/python.html">python</a></li>
-    </ul>
-	</div>
+                        <!-- Caption -->
+                        <div class="caption text-center">
+                                <a href="http://www.guilhermetoti.com/"><h1 class="mb-15">Guilherme Toti</h1></a>
+                            <h6>technology, programming, studies and random stuff</h6>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--====== End Header ======-->
 
-	<!-- Sidebar -->
-	<div class="four columns">
-		<!-- About  -->
-		<div class="widget no-mg-top">
-			<h3 class="headline">About</h3><span class="line"></span><div class="clearfix"></div>
-			<p>Hello, I'm Guilherme Toti!<br/>
-    I'm a Brazilian Software Engineer
-    from São Paulo - Brazil.<br/>
-    I am a 25 years old guy, addicted in learning new stuffs related to
-    technologies.<br/>
-    Also a huge fan of radical sports and my currently hobby is
-    to fly with my drone filming cool cities and beautiful natures!</p>
-		</div>
 
-		<!-- Categories -->
-		<div class="widget">
-			<h3 class="headline">Categories</h3><span class="line"></span><div class="clearfix"></div>
-			<nav class="categories">
-				<ul>
-					    <li><a href="http://www.guilhermetoti.com/category/javascript.html">javascript</a></li>
-					    <li><a href="http://www.guilhermetoti.com/category/python.html">python</a></li>
-				</ul>
-			</nav>
-		</div>
-		
-		<!-- Tags -->
-		<div class="widget">
-			<h3 class="headline">Tags</h3><span class="line"></span><div class="clearfix"></div>
-			<nav class="tags">				    <a href="http://www.guilhermetoti.com/tag/functional-programming.html">functional programming</a>
-				    <a href="http://www.guilhermetoti.com/tag/github.html">github</a>
-				    <a href="http://www.guilhermetoti.com/tag/javascript.html">javascript</a>
-				    <a href="http://www.guilhermetoti.com/tag/pelican.html">pelican</a>
-				    <a href="http://www.guilhermetoti.com/tag/pip.html">pip</a>
-				    <a href="http://www.guilhermetoti.com/tag/python.html">python</a>
-				    <a href="http://www.guilhermetoti.com/tag/upgrades.html">upgrades</a>
-			</nav>
-		</div>
-	</div>
-			</div>
-			<!-- Container / End -->
-		</div>
-		<!-- Content Wrapper / End -->
+            <!--====== mp-blog ======-->
+            <section class="mp-blog section-padding">
+                <div class="container">
+<div class="row">
+  <div class="col-md-8">
+      <div class="posts">
+<h4 class="head-left">Categories</h4>
+<ul>
+    <li><a href="http://www.guilhermetoti.com/category/javascript.html">javascript</a></li>
+    <li><a href="http://www.guilhermetoti.com/category/python.html">python</a></li>
+</ul>
+      </div>
+  </div>
 
-		<div id="footer-bottom">
-			<!-- Container -->
-			<div class="container">
-				<div class="eight columns">&copy; Guilherme Toti || Blog powered by <a href="http://getpelican.com">Pelican</a></div>
-					<div class="eight columns">
-						<ul class="social-icons-footer">
-								<li>
-									<a href="https://github.com/guilherme-toti" class="tooltip top" title="github">
-										<i class="icon-github"></i>
-									</a>
-								</li>
-								<li>
-									<a href="http://www.facebook.com/guilhermetoti" class="tooltip top" title="facebook">
-										<i class="icon-facebook"></i>
-									</a>
-								</li>
-							<li><a href="http://www.guilhermetoti.com/feeds/all.atom.xml" class="tooltip top" title="RSS"><i class="icon-rss"></i></a></li>
-						</ul>
-					</div>
-			</div>
-			<!-- Container / End -->
-		</div>
-		<!-- Footer Bottom / End -->
+  <!-- side bar -->
+  <div class="col-md-4">
+      <div class="side-bar">
+          <div class="widget">
+              <div class="catg">
+                  <div class="side-tit">
+                      <h6 class="ctit">Categories</h6>
+                  </div>
+                  
+                  <h5><a href="http://www.guilhermetoti.com/category/javascript.html">javascript</a></h5>
+                  <h5><a href="http://www.guilhermetoti.com/category/python.html">python</a></h5>
+              </div>
+          </div>
 
-	<!-- Javascripts -->
-	<script src="http://www.guilhermetoti.com/theme/js/jquery.min.js"></script>
+          <div class="widget">
+              <div class="tags">
+                  <div class="side-tit">
+                      <h6 class="ctit">Tags</h6>
+                  </div>                      <a href="http://www.guilhermetoti.com/tag/functional-programming.html"><span>functional programming</span></a>
+                      <a href="http://www.guilhermetoti.com/tag/github.html"><span>github</span></a>
+                      <a href="http://www.guilhermetoti.com/tag/javascript.html"><span>javascript</span></a>
+                      <a href="http://www.guilhermetoti.com/tag/pelican.html"><span>pelican</span></a>
+                      <a href="http://www.guilhermetoti.com/tag/pip.html"><span>pip</span></a>
+                      <a href="http://www.guilhermetoti.com/tag/python.html"><span>python</span></a>
+                      <a href="http://www.guilhermetoti.com/tag/upgrades.html"><span>upgrades</span></a>
+              </div>
+          </div>
+
+          <div class="widget">
+              <div class="follow">
+                  <div class="side-tit">
+                      <h6 class="ctit">Follow Me</h6>
+                  </div>
+                  <div class="social">
+                      <a href="https://github.com/guilherme-toti" target="_blank">
+                          <span><i class="fa fa-github" aria-hidden="true"></i></span>
+                      </a>
+                      <a href="http://www.facebook.com/guilhermetoti" target="_blank">
+                          <span><i class="fa fa-facebook" aria-hidden="true"></i></span>
+                      </a>
+                      <a href="https://www.instagram.com/guilherme_toti" target="_blank">
+                          <span><i class="fa fa-instagram" aria-hidden="true"></i></span>
+                      </a>
+                      <a href="https://www.youtube.com/guilhermetoti" target="_blank">
+                          <span><i class="fa fa-youtube" aria-hidden="true"></i></span>
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+                </div>
+            </section>
+            <!--====== End mp-blog ======-->
+
+            <!-- ====== Footer ======  -->
+            <footer class="gray">
+                <p>Guilherme Toti &copy; Blog powered by <a href="http://getpelican.com" target="_blank">Pelican</a></p>
+            </footer>
+            <!-- ====== End Footer ======  -->
+
+            <!-- jQuery -->
+            <script src="http://www.guilhermetoti.com/theme/js/jquery-3.0.0.min.js"></script>
+            <script src="http://www.guilhermetoti.com/theme/js/jquery-migrate-3.0.0.min.js"></script>
+
+            <!-- bootstrap -->
+            <script src="http://www.guilhermetoti.com/theme/js/bootstrap.min.js"></script>
+
+            <!-- scrollIt -->
+            <script src="http://www.guilhermetoti.com/theme/js/scrollIt.min.js"></script>
+
+            <!-- magnific-popup -->
+            <script src="http://www.guilhermetoti.com/theme/js/jquery.magnific-popup.min.js"></script>
+
+            <!-- owl carousel -->
+            <script src="http://www.guilhermetoti.com/theme/js/owl.carousel.min.js"></script>
+
+            <!-- stellar js -->
+            <script src="http://www.guilhermetoti.com/theme/js/jquery.stellar.min.js"></script>
+
+            <!-- typed js -->
+            <script src="http://www.guilhermetoti.com/theme/js/typed.js"></script>
+
+            <!-- isotope.pkgd.min js -->
+            <script src="http://www.guilhermetoti.com/theme/js/isotope.pkgd.min.js"></script>
+
+            <!-- validator js -->
+            <script src="http://www.guilhermetoti.com/theme/js/validator.js"></script>
+
+            <!-- custom script -->
+            <script src="http://www.guilhermetoti.com/theme/js/custom.js"></script>
+      
 <script type="text/javascript">
     var disqus_shortname = 'guilhermetoti';
     (function () {
@@ -181,5 +244,5 @@
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 </script>
-	</body>
+    </body>
 </html>

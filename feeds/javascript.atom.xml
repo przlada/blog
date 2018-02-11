@@ -39,7 +39,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;br/&gt;Let's imagine that you want to get from this array, only the objects where the &lt;strong&gt;location.state&lt;/strong&gt; are equal to &lt;strong&gt;SP&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Let's imagine that you want to get from this array, only the objects where the &lt;strong&gt;location.state&lt;/strong&gt; are equal to &lt;strong&gt;SP&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Maybe on a first approach, you might be thinking on something like:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;let newData = [];
 
@@ -52,7 +52,7 @@ for (let index in data) {
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;br/&gt;It would work, right? Right, but, we are creating another variable to handle the new data and looping through the &lt;strong&gt;data&lt;/strong&gt; object, searching for a state equal to &lt;strong&gt;SP&lt;/strong&gt; and then, pushing this object to the new variable.&lt;/p&gt;
+&lt;p&gt;It would work, right? Right, but, we are creating another variable to handle the new data and looping through the &lt;strong&gt;data&lt;/strong&gt; object, searching for a state equal to &lt;strong&gt;SP&lt;/strong&gt; and then, pushing this object to the new variable.&lt;/p&gt;
 &lt;p&gt;I think we can do better than this, dont we?&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Yes! We can do it better!&lt;/strong&gt; Using the &lt;strong&gt;filter()&lt;/strong&gt; method!&lt;/p&gt;
 &lt;p&gt;Let's see how it would be written using the &lt;strong&gt;filter()&lt;/strong&gt; method:&lt;/p&gt;
@@ -62,7 +62,7 @@ for (let index in data) {
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;br/&gt;The basic idea of the &lt;strong&gt;filter()&lt;/strong&gt; method is:&lt;/p&gt;
+&lt;p&gt;The basic idea of the &lt;strong&gt;filter()&lt;/strong&gt; method is:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;- Pass to the filter() method a function who:
   - Receives the current element of the data array you&amp;#39;re filtering;
   - Do your logic;
@@ -74,24 +74,24 @@ for (let index in data) {
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;br/&gt;And if you are learning about &lt;strong&gt;ES6&lt;/strong&gt;, the same code could be written as:&lt;/p&gt;
+&lt;p&gt;And if you are learning about &lt;strong&gt;ES6&lt;/strong&gt;, the same code could be written as:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;const newData = data.filter((currentElement) =&amp;gt; currentElement.location.state === &amp;#39;SP&amp;#39;);
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;br/&gt;Cool, huh? :D
-&lt;br/&gt; You can see the &lt;strong&gt;JSFiddle&lt;/strong&gt; of this article &lt;a href="https://jsfiddle.net/guilhermetoti/ab4gpvvt/" target="_blank"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Cool, huh? :D
+&lt;br/&gt;&lt;br/&gt; You can see the &lt;strong&gt;JSFiddle&lt;/strong&gt; of this article &lt;a href="https://jsfiddle.net/guilhermetoti/ab4gpvvt/" target="_blank"&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Problably at this moment you must be thinking about your old codes and how to refactor them to use the &lt;strong&gt;filter()&lt;/strong&gt; method, right?&lt;/p&gt;
-&lt;p&gt;Well, I hope so!&lt;/p&gt;
-&lt;p&gt;That's it! If you guys have some question, please comment below!&lt;/p&gt;</content><category term="javascript"></category><category term="functional programming"></category></entry><entry><title>Using map() in Javascript</title><link href="http://www.guilhermetoti.com/2017/07/07/using-map-in-javascript/" rel="alternate"></link><published>2017-07-07T15:31:00-03:00</published><updated>2017-07-07T15:31:00-03:00</updated><author><name>Guilherme Toti</name></author><id>tag:www.guilhermetoti.com,2017-07-07:/2017/07/07/using-map-in-javascript/</id><summary type="html">&lt;p&gt;Learn how to use this simple and powerful javascript function called .map with easy and real-life examples.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hello guys, how're you doing?
+&lt;p&gt;&lt;br/&gt;Well, I hope so!&lt;/p&gt;
+&lt;p&gt;&lt;br/&gt;That's it! If you guys have some question, please comment below!&lt;/p&gt;</content><category term="javascript"></category><category term="functional programming"></category></entry><entry><title>Using map() in Javascript</title><link href="http://www.guilhermetoti.com/2017/07/07/using-map-in-javascript/" rel="alternate"></link><published>2017-07-07T15:31:00-03:00</published><updated>2017-07-07T15:31:00-03:00</updated><author><name>Guilherme Toti</name></author><id>tag:www.guilhermetoti.com,2017-07-07:/2017/07/07/using-map-in-javascript/</id><summary type="html">&lt;p&gt;Learn how to use this simple and powerful javascript function called .map with easy and real-life examples.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hello guys, how're you doing?
 Hope you're doing great!&lt;/p&gt;
 &lt;p&gt;In this post, I want to talk about the &lt;strong&gt;&lt;a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank"&gt;map()&lt;/a&gt;&lt;/strong&gt; function, a function related to &lt;code&gt;Arrays&lt;/code&gt; in Javascript that I use a lot and it's very useful for various situations.&lt;/p&gt;
 &lt;p&gt;I'll show you guys some real-life examples, hope you guys like it!&lt;/p&gt;
-&lt;h2&gt;map()&lt;/h2&gt;
-&lt;p&gt;&lt;br/&gt;The &lt;strong&gt;map()&lt;/strong&gt; function is very useful when you need to translate or change the elements in an Array.
+&lt;h4&gt;map()&lt;/h4&gt;
+&lt;p&gt;The &lt;strong&gt;map()&lt;/strong&gt; function is very useful when you need to translate or change the elements in an Array.
 &lt;br/&gt;It loops through the Array &lt;strong&gt;from left to right&lt;/strong&gt;, creating a new Array, and, for each item, it runs some function that you passed as args, and your function must return an value, so, this return will be the new item of the new Array.&lt;/p&gt;
-&lt;p&gt;Let's see an example below.&lt;/p&gt;
-&lt;p&gt;Imagine that you receive this data from your API:&lt;/p&gt;
+&lt;p&gt;&lt;br/&gt;Let's see an example below.&lt;/p&gt;
+&lt;p&gt;&lt;br/&gt;Imagine that you receive this data from your API:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;const data = [
   {
     id: 1,
@@ -127,14 +127,14 @@ Hope you're doing great!&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;br/&gt;So, you have an array of objects with:&lt;/p&gt;
+&lt;p&gt;So, you have an array of objects with:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;- user id
 - name
 - location
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;br/&gt;Let's figure out we don't need all this data, we need only an array with objects like:&lt;/p&gt;
+&lt;p&gt;Let's figure out we don't need all this data, we need only an array with objects like:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;{
   id: 1,
   name: &amp;#39;John Doe&amp;#39;,
@@ -143,7 +143,7 @@ Hope you're doing great!&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;br/&gt;Problably, to resolve that, you may be thinking in something like:&lt;/p&gt;
+&lt;p&gt;Problably, to resolve that, you may be thinking in something like:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;let newData = [];
 
 for (var index in data) {
@@ -158,9 +158,9 @@ for (var index in data) {
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;br/&gt;Right?
+&lt;p&gt;Right?
 &lt;br/&gt;It isn't wrong, and it's works, but, there is a lot of steps, and, we can do it better!
-&lt;br/&gt;&lt;br/&gt;Doing that way, you are:&lt;/p&gt;
+&lt;br/&gt;Doing that way, you are:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;1. Instancing a new variable;
 2. Doing a `for` loop through the `data` Array, getting each index`;
 3. Using this `index` to access the current element of the Array;
@@ -168,8 +168,8 @@ for (var index in data) {
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;br/&gt;The &lt;strong&gt;map()&lt;/strong&gt; function provides an easy way to do exactly this and with less steps!
-&lt;br/&gt;&lt;br/&gt;Check below how to write the same using &lt;strong&gt;map()&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;map()&lt;/strong&gt; function provides an easy way to do exactly this and with less steps!
+&lt;br/&gt;Check below how to write the same using &lt;strong&gt;map()&lt;/strong&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;const newData = data.map(function(item) {
   return {
     id: item.id,
@@ -180,10 +180,10 @@ for (var index in data) {
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;br/&gt;Maybe your reaction be like:
+&lt;p&gt;Maybe your reaction be like:
 &lt;img alt="WTF" src="http://www.guilhermetoti.com/images/wtf.gif"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;br/&gt;But, keep calm, i'll explain every step!
-&lt;br/&gt;&lt;br/&gt;When you execute &lt;strong&gt;Array.map()&lt;/strong&gt;, to clear your mind in a &lt;em&gt;real-life&lt;/em&gt; example, you can think in something like:&lt;/p&gt;
+&lt;br/&gt;When you execute &lt;strong&gt;Array.map()&lt;/strong&gt;, to clear your mind in a &lt;em&gt;real-life&lt;/em&gt; example, you can think in something like:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;1. The map() gets your Array;
 2. Loop through it, and, for each item it:
    1. Execute the function you&amp;#39;ve passed, passing the current item as an argument;
@@ -191,7 +191,7 @@ for (var index in data) {
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;br/&gt;So, this also can be re-written to something like:&lt;/p&gt;
+&lt;p&gt;So, this also can be re-written to something like:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;parseItem&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;item&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
   &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="nx"&gt;id&lt;/span&gt;: &lt;span class="kt"&gt;item.id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -204,13 +204,13 @@ for (var index in data) {
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;br/&gt;It will produce the same result and has the same effect.&lt;/p&gt;
+&lt;p&gt;It will produce the same result and has the same effect.&lt;/p&gt;
 &lt;p&gt;And if you're familiar with ES6, you can re-write it to:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;const&lt;/span&gt; &lt;span class="nt"&gt;newData&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nt"&gt;data&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;map&lt;/span&gt;&lt;span class="o"&gt;((&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="err"&gt;id,&lt;/span&gt; &lt;span class="err"&gt;name,&lt;/span&gt; &lt;span class="n"&gt;location&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="err"&gt;{&lt;/span&gt; &lt;span class="n"&gt;city&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="err"&gt;}&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="err"&gt;id,&lt;/span&gt; &lt;span class="err"&gt;name,&lt;/span&gt; &lt;span class="err"&gt;city&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="o"&gt;));&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;br/&gt;But i'll not talk about ES6 now, maybe in another post! :P
+&lt;p&gt;But i'll not talk about ES6 now, maybe in another post! :P
 &lt;br/&gt;&lt;br/&gt;Using any of the examples above, if you run a &lt;strong&gt;console.log(newData)&lt;/strong&gt;, you will receive:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[
   {
@@ -232,6 +232,6 @@ for (var index in data) {
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;br/&gt;So, that's it guys, as expected!!
+&lt;p&gt;So, that's it guys, as expected!!
 &lt;br/&gt;You can see the &lt;strong&gt;JSFiddle&lt;/strong&gt; of this post &lt;a href="https://jsfiddle.net/guilhermetoti/bju032cw/" target="_blank"&gt;here&lt;/a&gt;
 &lt;br/&gt;&lt;br/&gt;I hope you guys understand about the &lt;strong&gt;map()&lt;/strong&gt; function, but, if you have any questions please comment below!&lt;/p&gt;</content><category term="javascript"></category><category term="functional programming"></category></entry></feed>

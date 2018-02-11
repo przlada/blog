@@ -1,63 +1,66 @@
 ﻿<!DOCTYPE html>
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<html lang="en">
-<!--<![endif]-->
-	<head>
-            <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <meta name="author" content="Guilherme Toti">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Guilherme Toti">
+
+    <meta name="description" content="">
+    <meta name="keywords" content="">
 
 
-        <title>Guilherme Toti - Using map() in Javascript</title>
+    <title>Guilherme Toti - Using map() in Javascript</title>
 
-            <link href="http://www.guilhermetoti.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Guilherme Toti Full Atom Feed" />
-            <link href="http://www.guilhermetoti.com/feeds/javascript.atom.xml" type="application/atom+xml" rel="alternate" title="Guilherme Toti Categories Atom Feed" />
+        <link href="http://www.guilhermetoti.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Guilherme Toti Full Atom Feed" />
+        <link href="http://www.guilhermetoti.com/feeds/javascript.atom.xml" type="application/atom+xml" rel="alternate" title="Guilherme Toti Categories Atom Feed" />
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="http://www.guilhermetoti.com/theme/css/style.css">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="http://www.guilhermetoti.com/theme/css/bootstrap.min.css">
 
-        <!-- Custom CSS -->
-        	<link rel="stylesheet" href="http://www.guilhermetoti.com/theme/css/colors/blue.css" id="colors">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Muli:200,300,400,600,700,,800,900|Josefin+Sans:300,400,600,700" rel="stylesheet">
 
-        <!-- Code highlight color scheme -->
-            <link href="http://www.guilhermetoti.com/theme/css/code_blocks/darkly.css" rel="stylesheet">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="http://www.guilhermetoti.com/theme/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="http://www.guilhermetoti.com/theme/css/owl.theme.default.min.css">
 
+    <!-- magnific-popup CSS -->
+    <link rel="stylesheet" href="http://www.guilhermetoti.com/theme/css/magnific-popup.css">
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
+    <!-- Font Icon Core CSS -->
+    <link rel="stylesheet" href="http://www.guilhermetoti.com/theme/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://www.guilhermetoti.com/theme/css/et-line.css">
+    <link rel="stylesheet" href="http://www.guilhermetoti.com/theme/css/ionicons.min.css">
 
+    <!-- Core Style Css -->
+    <link rel="stylesheet" href="http://www.guilhermetoti.com/theme/css/style.css">
 
+    <!--[if lt IE 9]-->
+    <script src="http://www.guilhermetoti.com/theme/js/html5shiv.min.js"></script>
+    <!--[endif]-->
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
+                <meta property="og:locale" content="en_US">
+        <meta property="og:site_name" content="Guilherme Toti">
 
-        <meta name="tags" contents="javascript" />
-        <meta name="tags" contents="functional programming" />
     <meta property="og:type" content="article">
+    <meta property="article:author" content="">
+    <meta property="og:url" content="http://www.guilhermetoti.com/2017/07/07/using-map-in-javascript/">
     <meta property="og:title" content="Using map() in Javascript">
-    <meta property="og:url" content="2017/07/07/using-map-in-javascript/">
-    <meta property="og:description" content="Learn how to use this simple and powerful javascript function called .map with easy and real-life examples.">
-    <meta property="article:published_time" content="Friday, July 07, 2017">
-    <meta name="twitter:title" content="Using map() in Javascript">
-    <meta name="twitter:description" content="Learn how to use this simple and powerful javascript function called .map with easy and real-life examples.">
-    <meta name="description" content="Learn how to use this simple and powerful javascript function called .map with easy and real-life examples.">
-    <meta name="twitter:image" content="js-logo.png">
-    <meta property="og:image" content="js-logo.png">
+    <meta property="og:description" content="">
+       <meta property="og:image" content="http://www.guilhermetoti.com/images/guilherme-toti.jpg">
+    <meta property="article:published_time" content="2017-07-07 15:31:00-03:00">
 
-	                <meta property="og:locale" content="en_US">
-		<meta property="og:site_name" content="Guilherme Toti">
-
-	<meta property="og:type" content="article">
-	<meta property="article:author" content="">
-	<meta property="og:url" content="http://www.guilhermetoti.com/2017/07/07/using-map-in-javascript/">
-	<meta property="og:title" content="Using map() in Javascript">
-	<meta property="og:description" content="">
-       <meta property="og:image" content="http://www.guilhermetoti.com/js-logo.png">
-	<meta property="article:published_time" content="2017-07-07 15:31:00-03:00">
     <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-39972528-7']);
@@ -68,85 +71,102 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
     </script>
-	</head>
-	<body>
-		<header id="header">
-			<!-- Container -->
-			<div class="container">
-				<!-- Logo / Mobile Menu -->
-				<div class="five columns">
-					<div id="textlogo">
-						<h1><a href="http://www.guilhermetoti.com/">Guilherme Toti</a></h1>
-					</div>
-				</div>
-						<!-- Navigation
-				================================================== -->
-				<div class="eleven columns">
 
-					<nav id="navigation" class="menu">
-						<ul id="responsive">
+    </head>
+    <body>
+        <!-- ====== Preloader ======  -->
+        <div class="loading">
+            <div class="load-circle"></div>
+        </div>
+        <!-- ======End Preloader ======  -->
 
-							<li><a href="http://www.guilhermetoti.com/">Home</a></li>
+        <!-- ====== button-top ======  -->
+        <div class="button-top" data-scroll-nav="0">
+            <span><i class="fa fa-angle-up" aria-hidden="true"></i></span>
+        </div>
+        <!-- ======End button-top ======  -->
+
+        <!-- ====== Navgition ======  -->
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-icon-collapse" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <!-- logo -->
+                <a href="http://www.guilhermetoti.com/">
+                    <div class="logo">
+                        <h1>Guilherme Toti</h1>
+                    </div>
+                </a>
+
+                </div>
+
+                <!-- Collect the nav links, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="nav-icon-collapse">
+                <!-- links -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="http://www.guilhermetoti.com/" >Home</a></li>
 
 
-							        <li><a href="http://www.guilhermetoti.com/pages/about.html">About</a></li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-			<!-- Container / End -->
-		</header>
-		<!-- Header / End -->
+                            <li><a href="http://www.guilhermetoti.com/pages/sobre.html" >Sobre</a></li>
+                </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container -->
+            </nav>
+            <!-- ====== End Navgition ======  -->
 
-		<!-- Breadcrumbs Container-->
-		<div id="content-wrapper">
-			<section id="titlebar">
-				<!-- Container -->
-				<div class="container">
-				<div class="thirteen columns">
-					<nav id="breadcrumbs">
-						<ul>
-							<li>You are here:</li>
-							<li><a href="http://www.guilhermetoti.com/">Home</a></li>
-<li><a href="http://www.guilhermetoti.com/category/javascript.html">javascript</a></li>
-<li>Using map() in Javascript</li>
-						</ul>
-					</nav>
-				</div>
-				</div>
-				<!-- Container / End -->
-			</section>
+            <!--====== Header ======-->
+            <section class="sub-header">
+                <div class="container">
+                    <div class="v-middle">
 
-			<div class="container">
-	<div class="twelve alt columns">
-<article class="post" style="margin: 0; border: 0;">
-	<figure class="post-img media">
-		<div class="mediaholder">
-			<a class="mfp-image" title="Using map() in Javascript" href="http://www.guilhermetoti.com/2017/07/07/using-map-in-javascript/">
-				<img src="http://www.guilhermetoti.com/images/js-logo.png" alt=""/>
-			</a>
-		</div>
-	</figure>
+                        <!-- Caption -->
+                        <div class="caption text-center">
+                                <a href="http://www.guilhermetoti.com/"><h1 class="mb-15">Guilherme Toti</h1></a>
+                            <h6>technology, programming, studies and random stuff</h6>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--====== End Header ======-->
 
-	<section class="post-content">
 
-		<header class="meta">
-			<h2><a href="http://www.guilhermetoti.com/2017/07/07/using-map-in-javascript/">Using map() in Javascript</a></h2>
-			<ul>
-				<li>By <a href="http://www.guilhermetoti.com/author/guilherme-toti.html">Guilherme Toti</a></li>
-				<li>Fri 07 July 2017</li>
-			</ul>
-		</header>
+            <!--====== mp-blog ======-->
+            <section class="mp-blog section-padding">
+                <div class="container">
+<div class="row">
+  <div class="col-md-8">
+      <div class="posts">
+<!-- item -->
+<div class="item">
+    <div class="content">
 
-		<p>Hello guys, how're you doing?
+        <div class="post-info">
+            <a href="http://www.guilhermetoti.com/2017/07/07/using-map-in-javascript/">
+                <h2>Using map() in Javascript</h2>
+            </a>
+            <div class="mor-inf">
+                <ul>
+                    <li><span class="icon"><i class="fa fa-user" aria-hidden="true"></i></span>Posted By <a href="http://www.guilhermetoti.com/author/guilherme-toti.html">Guilherme Toti</a></li>
+                    <li><span class="icon"><i class="fa fa-calendar" aria-hidden="true"></i></span>Fri 07 July 2017</li>
+                    <li><span class="icon"><i class="fa fa-tags" aria-hidden="true"></i></span><a href="http://www.guilhermetoti.com/tag/javascript.html">javascript</a>, <a href="http://www.guilhermetoti.com/tag/functional-programming.html">functional programming</a></li>
+                </ul>
+            </div>
+            <p class="mb-10"><p>Hello guys, how're you doing?
 Hope you're doing great!</p>
 <p>In this post, I want to talk about the <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank">map()</a></strong> function, a function related to <code>Arrays</code> in Javascript that I use a lot and it's very useful for various situations.</p>
 <p>I'll show you guys some real-life examples, hope you guys like it!</p>
-<h2>map()</h2>
-<p><br/>The <strong>map()</strong> function is very useful when you need to translate or change the elements in an Array.
+<h4>map()</h4>
+<p>The <strong>map()</strong> function is very useful when you need to translate or change the elements in an Array.
 <br/>It loops through the Array <strong>from left to right</strong>, creating a new Array, and, for each item, it runs some function that you passed as args, and your function must return an value, so, this return will be the new item of the new Array.</p>
-<p>Let's see an example below.</p>
-<p>Imagine that you receive this data from your API:</p>
+<p><br/>Let's see an example below.</p>
+<p><br/>Imagine that you receive this data from your API:</p>
 <div class="highlight"><pre><span></span>const data = [
   {
     id: 1,
@@ -182,14 +202,14 @@ Hope you're doing great!</p>
 </pre></div>
 
 
-<p><br/>So, you have an array of objects with:</p>
+<p>So, you have an array of objects with:</p>
 <div class="highlight"><pre><span></span>- user id
 - name
 - location
 </pre></div>
 
 
-<p><br/>Let's figure out we don't need all this data, we need only an array with objects like:</p>
+<p>Let's figure out we don't need all this data, we need only an array with objects like:</p>
 <div class="highlight"><pre><span></span>{
   id: 1,
   name: &#39;John Doe&#39;,
@@ -198,7 +218,7 @@ Hope you're doing great!</p>
 </pre></div>
 
 
-<p><br/>Problably, to resolve that, you may be thinking in something like:</p>
+<p>Problably, to resolve that, you may be thinking in something like:</p>
 <div class="highlight"><pre><span></span>let newData = [];
 
 for (var index in data) {
@@ -213,9 +233,9 @@ for (var index in data) {
 </pre></div>
 
 
-<p><br/>Right?
+<p>Right?
 <br/>It isn't wrong, and it's works, but, there is a lot of steps, and, we can do it better!
-<br/><br/>Doing that way, you are:</p>
+<br/>Doing that way, you are:</p>
 <div class="highlight"><pre><span></span>1. Instancing a new variable;
 2. Doing a `for` loop through the `data` Array, getting each index`;
 3. Using this `index` to access the current element of the Array;
@@ -223,8 +243,8 @@ for (var index in data) {
 </pre></div>
 
 
-<p><br/>The <strong>map()</strong> function provides an easy way to do exactly this and with less steps!
-<br/><br/>Check below how to write the same using <strong>map()</strong>:</p>
+<p>The <strong>map()</strong> function provides an easy way to do exactly this and with less steps!
+<br/>Check below how to write the same using <strong>map()</strong>:</p>
 <div class="highlight"><pre><span></span>const newData = data.map(function(item) {
   return {
     id: item.id,
@@ -235,10 +255,10 @@ for (var index in data) {
 </pre></div>
 
 
-<p><br/>Maybe your reaction be like:
+<p>Maybe your reaction be like:
 <img alt="WTF" src="http://www.guilhermetoti.com/images/wtf.gif"></p>
 <p><br/>But, keep calm, i'll explain every step!
-<br/><br/>When you execute <strong>Array.map()</strong>, to clear your mind in a <em>real-life</em> example, you can think in something like:</p>
+<br/>When you execute <strong>Array.map()</strong>, to clear your mind in a <em>real-life</em> example, you can think in something like:</p>
 <div class="highlight"><pre><span></span>1. The map() gets your Array;
 2. Loop through it, and, for each item it:
    1. Execute the function you&#39;ve passed, passing the current item as an argument;
@@ -246,7 +266,7 @@ for (var index in data) {
 </pre></div>
 
 
-<p><br/>So, this also can be re-written to something like:</p>
+<p>So, this also can be re-written to something like:</p>
 <div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">parseItem</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">return</span> <span class="p">{</span>
     <span class="nx">id</span>: <span class="kt">item.id</span><span class="p">,</span>
@@ -259,13 +279,13 @@ for (var index in data) {
 </pre></div>
 
 
-<p><br/>It will produce the same result and has the same effect.</p>
+<p>It will produce the same result and has the same effect.</p>
 <p>And if you're familiar with ES6, you can re-write it to:</p>
 <div class="highlight"><pre><span></span><span class="nt">const</span> <span class="nt">newData</span> <span class="o">=</span> <span class="nt">data</span><span class="p">.</span><span class="nc">map</span><span class="o">((</span><span class="p">{</span> <span class="err">id,</span> <span class="err">name,</span> <span class="n">location</span><span class="p">:</span> <span class="err">{</span> <span class="n">city</span> <span class="p">}</span> <span class="err">}</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="o">(</span><span class="p">{</span> <span class="err">id,</span> <span class="err">name,</span> <span class="err">city</span> <span class="p">}</span><span class="o">));</span>
 </pre></div>
 
 
-<p><br/>But i'll not talk about ES6 now, maybe in another post! :P
+<p>But i'll not talk about ES6 now, maybe in another post! :P
 <br/><br/>Using any of the examples above, if you run a <strong>console.log(newData)</strong>, you will receive:</p>
 <div class="highlight"><pre><span></span>[
   {
@@ -287,123 +307,133 @@ for (var index in data) {
 </pre></div>
 
 
-<p><br/>So, that's it guys, as expected!!
+<p>So, that's it guys, as expected!!
 <br/>You can see the <strong>JSFiddle</strong> of this post <a href="https://jsfiddle.net/guilhermetoti/bju032cw/" target="_blank">here</a>
-<br/><br/>I hope you guys understand about the <strong>map()</strong> function, but, if you have any questions please comment below!</p>
-		    <div class="tags">
-		        <p>tags: <a href="http://www.guilhermetoti.com/tag/javascript.html">javascript</a><a href="http://www.guilhermetoti.com/tag/functional-programming.html">functional programming</a></p>
-		    </div>
+<br/><br/>I hope you guys understand about the <strong>map()</strong> function, but, if you have any questions please comment below!</p></p>
 
-<div class="sharing">
-        <!-- AddThis Button BEGIN -->
-        <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
-            <a class="addthis_button_preferred_1"></a>
-            <a class="addthis_button_preferred_2"></a>
-            <a class="addthis_button_preferred_3"></a>
-            <a class="addthis_button_preferred_4"></a>
-            <a class="addthis_button_preferred_5"></a>
-            <a class="addthis_button_preferred_6"></a>
-            <a class="addthis_button_preferred_7"></a>
-            <a class="addthis_button_preferred_8"></a>
-            <a class="addthis_button_preferred_9"></a>
-            <a class="addthis_button_compact"></a>
-            <a class="addthis_counter addthis_bubble_style"></a>
+            <!-- page numbers -->
+            <div class="numb mt-80">
+                <a href="http://www.guilhermetoti.com/2016/03/30/be-careful-with-pip-upgrades/"><span><< Previous Post</span></a>
+
+                <a href="http://www.guilhermetoti.com/2017/07/09/using-filter-in-javascript/" class="pull-right"><span>Next Post >></span></a>
+            </div>
         </div>
-        <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56c64315810bc72f"></script>
-        <!-- AddThis Button END -->
+    </div>
 </div>
-<hr>
+    
+<!-- comments -->
+<div class="mb-80">
+        <div class="comments">
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                var disqus_shortname = 'guilhermetoti';
+                var disqus_identifier = '2017/07/07/using-map-in-javascript/';
+                var disqus_url = 'http://www.guilhermetoti.com/2017/07/07/using-map-in-javascript/';
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//guilhermetoti.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+</div>
+      </div>
+  </div>
 
-		    <div class="comments">
-		        <div id="disqus_thread"></div>
-		        <script type="text/javascript">
-		            var disqus_shortname = 'guilhermetoti';
-		            var disqus_identifier = '2017/07/07/using-map-in-javascript/';
-		            var disqus_url = 'http://www.guilhermetoti.com/2017/07/07/using-map-in-javascript/';
-		            (function() {
-		                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-		                dsq.src = '//guilhermetoti.disqus.com/embed.js';
-		                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-		            })();
-		        </script>
-		        <noscript>Please enable JavaScript to view the comments.</noscript>
-		    </div>
-	</section>
-	<div class="clearfix"></div>
+  <!-- side bar -->
+  <div class="col-md-4">
+      <div class="side-bar">
+          <div class="widget">
+              <div class="catg">
+                  <div class="side-tit">
+                      <h6 class="ctit">Categories</h6>
+                  </div>
+                  
+                  <h5><a href="http://www.guilhermetoti.com/category/javascript.html">javascript</a></h5>
+                  <h5><a href="http://www.guilhermetoti.com/category/python.html">python</a></h5>
+              </div>
+          </div>
 
-</article>
+          <div class="widget">
+              <div class="tags">
+                  <div class="side-tit">
+                      <h6 class="ctit">Tags</h6>
+                  </div>                      <a href="http://www.guilhermetoti.com/tag/functional-programming.html"><span>functional programming</span></a>
+                      <a href="http://www.guilhermetoti.com/tag/github.html"><span>github</span></a>
+                      <a href="http://www.guilhermetoti.com/tag/javascript.html"><span>javascript</span></a>
+                      <a href="http://www.guilhermetoti.com/tag/pelican.html"><span>pelican</span></a>
+                      <a href="http://www.guilhermetoti.com/tag/pip.html"><span>pip</span></a>
+                      <a href="http://www.guilhermetoti.com/tag/python.html"><span>python</span></a>
+                      <a href="http://www.guilhermetoti.com/tag/upgrades.html"><span>upgrades</span></a>
+              </div>
+          </div>
 
-	</div>
+          <div class="widget">
+              <div class="follow">
+                  <div class="side-tit">
+                      <h6 class="ctit">Follow Me</h6>
+                  </div>
+                  <div class="social">
+                      <a href="https://github.com/guilherme-toti" target="_blank">
+                          <span><i class="fa fa-github" aria-hidden="true"></i></span>
+                      </a>
+                      <a href="http://www.facebook.com/guilhermetoti" target="_blank">
+                          <span><i class="fa fa-facebook" aria-hidden="true"></i></span>
+                      </a>
+                      <a href="https://www.instagram.com/guilherme_toti" target="_blank">
+                          <span><i class="fa fa-instagram" aria-hidden="true"></i></span>
+                      </a>
+                      <a href="https://www.youtube.com/guilhermetoti" target="_blank">
+                          <span><i class="fa fa-youtube" aria-hidden="true"></i></span>
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+                </div>
+            </section>
+            <!--====== End mp-blog ======-->
 
-	<!-- Sidebar -->
-	<div class="four columns">
-		<!-- About  -->
-		<div class="widget no-mg-top">
-			<h3 class="headline">About</h3><span class="line"></span><div class="clearfix"></div>
-			<p>Hello, I'm Guilherme Toti!<br/>
-    I'm a Brazilian Software Engineer
-    from São Paulo - Brazil.<br/>
-    I am a 25 years old guy, addicted in learning new stuffs related to
-    technologies.<br/>
-    Also a huge fan of radical sports and my currently hobby is
-    to fly with my drone filming cool cities and beautiful natures!</p>
-		</div>
+            <!-- ====== Footer ======  -->
+            <footer class="gray">
+                <p>Guilherme Toti &copy; Blog powered by <a href="http://getpelican.com" target="_blank">Pelican</a></p>
+            </footer>
+            <!-- ====== End Footer ======  -->
 
-		<!-- Categories -->
-		<div class="widget">
-			<h3 class="headline">Categories</h3><span class="line"></span><div class="clearfix"></div>
-			<nav class="categories">
-				<ul>
-					    <li class="active"><a href="http://www.guilhermetoti.com/category/javascript.html">javascript</a></li>
-					    <li><a href="http://www.guilhermetoti.com/category/python.html">python</a></li>
-				</ul>
-			</nav>
-		</div>
-		
-		<!-- Tags -->
-		<div class="widget">
-			<h3 class="headline">Tags</h3><span class="line"></span><div class="clearfix"></div>
-			<nav class="tags">				    <a href="http://www.guilhermetoti.com/tag/functional-programming.html">functional programming</a>
-				    <a href="http://www.guilhermetoti.com/tag/github.html">github</a>
-				    <a href="http://www.guilhermetoti.com/tag/javascript.html">javascript</a>
-				    <a href="http://www.guilhermetoti.com/tag/pelican.html">pelican</a>
-				    <a href="http://www.guilhermetoti.com/tag/pip.html">pip</a>
-				    <a href="http://www.guilhermetoti.com/tag/python.html">python</a>
-				    <a href="http://www.guilhermetoti.com/tag/upgrades.html">upgrades</a>
-			</nav>
-		</div>
-	</div>
-			</div>
-			<!-- Container / End -->
-		</div>
-		<!-- Content Wrapper / End -->
+            <!-- jQuery -->
+            <script src="http://www.guilhermetoti.com/theme/js/jquery-3.0.0.min.js"></script>
+            <script src="http://www.guilhermetoti.com/theme/js/jquery-migrate-3.0.0.min.js"></script>
 
-		<div id="footer-bottom">
-			<!-- Container -->
-			<div class="container">
-				<div class="eight columns">&copy; Guilherme Toti || Blog powered by <a href="http://getpelican.com">Pelican</a></div>
-					<div class="eight columns">
-						<ul class="social-icons-footer">
-								<li>
-									<a href="https://github.com/guilherme-toti" class="tooltip top" title="github">
-										<i class="icon-github"></i>
-									</a>
-								</li>
-								<li>
-									<a href="http://www.facebook.com/guilhermetoti" class="tooltip top" title="facebook">
-										<i class="icon-facebook"></i>
-									</a>
-								</li>
-							<li><a href="http://www.guilhermetoti.com/feeds/all.atom.xml" class="tooltip top" title="RSS"><i class="icon-rss"></i></a></li>
-						</ul>
-					</div>
-			</div>
-			<!-- Container / End -->
-		</div>
-		<!-- Footer Bottom / End -->
+            <!-- bootstrap -->
+            <script src="http://www.guilhermetoti.com/theme/js/bootstrap.min.js"></script>
 
-	<!-- Javascripts -->
-	<script src="http://www.guilhermetoti.com/theme/js/jquery.min.js"></script>
+            <!-- scrollIt -->
+            <script src="http://www.guilhermetoti.com/theme/js/scrollIt.min.js"></script>
+
+            <!-- magnific-popup -->
+            <script src="http://www.guilhermetoti.com/theme/js/jquery.magnific-popup.min.js"></script>
+
+            <!-- owl carousel -->
+            <script src="http://www.guilhermetoti.com/theme/js/owl.carousel.min.js"></script>
+
+            <!-- stellar js -->
+            <script src="http://www.guilhermetoti.com/theme/js/jquery.stellar.min.js"></script>
+
+            <!-- typed js -->
+            <script src="http://www.guilhermetoti.com/theme/js/typed.js"></script>
+
+            <!-- isotope.pkgd.min js -->
+            <script src="http://www.guilhermetoti.com/theme/js/isotope.pkgd.min.js"></script>
+
+            <!-- validator js -->
+            <script src="http://www.guilhermetoti.com/theme/js/validator.js"></script>
+
+            <!-- custom script -->
+            <script src="http://www.guilhermetoti.com/theme/js/custom.js"></script>
+      
 <script type="text/javascript">
     var disqus_shortname = 'guilhermetoti';
     (function () {
@@ -413,5 +443,5 @@ for (var index in data) {
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 </script>
-	</body>
+    </body>
 </html>
