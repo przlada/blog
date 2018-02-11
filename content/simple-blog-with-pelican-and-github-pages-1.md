@@ -8,13 +8,13 @@ For the first post of my blog, why not talk about how to create one blog like th
 I will teach you how to create a simple blog using Pelican and host on Github Pages.<br/>
 I'm gonna break this tutorial in **two parts**, this first part i will teach how to create your blog and at the second part i will teach how to host on Github Pages. Let's start!
 
-# What's Pelican?
+### What's Pelican?
 *"Pelican is a static site generator, written in Python, that requires no database or server-side logic."* [From Pelican's website](http://blog.getpelican.com/).
 
-# What's the logic?
+### What's the logic?
 You just need to write `markdown` files and this will be your pages and/or posts.<br/> Pelican will do all the magic :)
 
-# Cool! How do i start?
+### Cool! How do i start?
 
 So, first of all, you need to ensure that you have [python](https://www.python.org "How to install Python"), [pip](https://pip.pypa.io/en/stable/installing/ "How to install Pip") and [virtualenvwrapper](https://virtualenvwrapper.readthedocs.org "How to install Virtualenvwrapper").
 
@@ -65,7 +65,7 @@ This command will ask you some questions about your blog and after that it will 
 > **Don't know your timezone? Maybe this [link](http://php.net/manual/en/timezones.php) will help you.** (I know it's `PHP`, but it will really help :P)
 
 
-## The cool part, writing posts
+#### The cool part, writing posts
 
 Now you can check that you have a folder called `content`, right?<br/>
 This folder is where your content must be.<br/>
@@ -99,7 +99,7 @@ Every markdown file here need to have a minimal header as you can see above.<br/
 You need to have at least `Title`, `Date` and `Category`.<br/>
 Everything you write after the header will be the post content.
 
-## Nice, i feel's like a writer but how to make it work now?
+#### Nice, i feel's like a writer but how to make it work now?
 
 This is the most simple part, after write your post(s), you just need to:
 
@@ -121,7 +121,7 @@ This command will take every markdown file under `content` folder and generate t
 
 *Easy, huh?*
 
-## That's awesome, but, i'm not ready to push yet, how can i check it locally?
+#### That's awesome, but, i'm not ready to push yet, how can i check it locally?
 
 To run your blog locally simple run:
 ```
@@ -133,7 +133,7 @@ And go check your awesome blog in: [http://localhost:8000](http://localhost:8000
 Now you have a really nice blog running locally!
 On the next post i will teach how to host it on Github Pages.
 
-# Tips:
+### Tips:
 
 If you don't want to run `pelican content` everytime you change a markdown file, you can run (*from root folder*):
 ```

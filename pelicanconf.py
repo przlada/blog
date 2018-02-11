@@ -33,22 +33,15 @@ ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
 SOCIAL = (
     ('github', 'https://github.com/guilherme-toti'),
     ('facebook', 'http://www.facebook.com/guilhermetoti'),
+    ('instagram', 'https://www.instagram.com/guilherme_toti'),
+    ('youtube', 'https://www.youtube.com/guilhermetoti'),
 )
 
 THEME = 'theme'
 
 MY_CURRENT_AGE = datetime.now().year - 1992
 
-SIDEBAR_DISPLAY = ['about', 'categories', 'tags']
-SIDEBAR_ABOUT = """Hello, I'm Guilherme Toti!<br/>
-    I'm a Brazilian Software Engineer
-    from São Paulo - Brazil.<br/>
-    I am a {} years old guy, addicted in learning new stuffs related to
-    technologies.<br/>
-    Also a huge fan of radical sports and my currently hobby is
-    to fly with my drone filming cool cities and beautiful natures!""".format(
-        MY_CURRENT_AGE
-    )
+SIDEBAR_DISPLAY = ['categories', 'tags', 'social']
 
 DEFAULT_PAGINATION = 10
 STATIC_PATHS = ['images', 'extra/CNAME']
@@ -56,3 +49,6 @@ EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
 ADDTHIS_PUBID = "ra-56c64315810bc72f"
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+
+PLUGIN_PATHS = ['plugins']
+PLUGINS = ['neighbors']

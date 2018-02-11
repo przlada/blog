@@ -17,10 +17,10 @@ The `gh-pages` will store the `output` content.
 
 Let's start.
 
-# Login on your Github account
+### Login on your Github account
 First you need to to login on [Github website](https://github.com).
 
-# Create a new repository
+### Create a new repository
 Now you need to create a new repository, but, there is a special thing, the repository name needs to be:
 ```
 your-github-username.github.io
@@ -28,7 +28,7 @@ your-github-username.github.io
 
 On my case, the repository name will be `guilherme-toti.github.io`.
 
-# Start git locally
+### Start git locally
 After you create your repository, you will see a quick setup page, right?
 Now, on `console`, go to you blog folder and type:
 
@@ -46,7 +46,7 @@ Create a file named `.gitignore`:
 
 Open `.gitignore` and paste this:
 ```
-# Pelican output folder
+### Pelican output folder
 output
 ```
 
@@ -65,7 +65,7 @@ Let's go step-by-step:<br/>
 `$ git checkout -b pelican` will create and go to branch `pelican`<br/>
 `$ git add .` will prepare your files to next commit<br/>
 `$ git commit -m "Initial pelican files"` will commit all your changes<br/>
-`# git push origin pelican` will push this commit to the branch pelican. 
+`### git push origin pelican` will push this commit to the branch pelican. 
 
 Now, to publish your content you need the pip module `ghp-import`:
 ```
@@ -84,7 +84,7 @@ Now just wait some seconds and you can access your awesome blog at `http://your-
 
 Congragulations!! Now you have a pretty cool blog hosted at Github Pages for free! :)
 
-# Quick Tips
+### Quick Tips
 Every time you change something or create new content you need to run:
 ```
 (blog) $ git add .

@@ -1,7 +1,6 @@
 Title: Using map() in Javascript
 Summary: Learn how to use this simple and powerful javascript function called .map with easy and real-life examples.
 Date: 2017-07-07 15:31
-Image: js-logo.png
 Category: javascript
 Tags: javascript, functional programming
 
@@ -12,13 +11,13 @@ In this post, I want to talk about the **<a href="https://developer.mozilla.org/
 
 I'll show you guys some real-life examples, hope you guys like it!
 
-## map()
-<br/>The **map()** function is very useful when you need to translate or change the elements in an Array.
+#### map()
+The **map()** function is very useful when you need to translate or change the elements in an Array.
 <br/>It loops through the Array **from left to right**, creating a new Array, and, for each item, it runs some function that you passed as args, and your function must return an value, so, this return will be the new item of the new Array.
 
-Let's see an example below.
+<br/>Let's see an example below.
 
-Imagine that you receive this data from your API:
+<br/>Imagine that you receive this data from your API:
 ```
 const data = [
   {
@@ -53,13 +52,13 @@ const data = [
   }
 ]
 ```
-<br/>So, you have an array of objects with:
+So, you have an array of objects with:
 ```
 - user id
 - name
 - location
 ```
-<br/>Let's figure out we don't need all this data, we need only an array with objects like:
+Let's figure out we don't need all this data, we need only an array with objects like:
 ```
 {
   id: 1,
@@ -67,7 +66,7 @@ const data = [
   city: 'São Paulo'
 }
 ```
-<br/>Problably, to resolve that, you may be thinking in something like:
+Problably, to resolve that, you may be thinking in something like:
 ```
 let newData = [];
 
@@ -81,17 +80,17 @@ for (var index in data) {
   })
 };
 ```
-<br/>Right?
+Right?
 <br/>It isn't wrong, and it's works, but, there is a lot of steps, and, we can do it better!
-<br/><br/>Doing that way, you are:
+<br/>Doing that way, you are:
 ```
 1. Instancing a new variable;
 2. Doing a `for` loop through the `data` Array, getting each index`;
 3. Using this `index` to access the current element of the Array;
 4. Pushing the new object to the variable previously created;
 ```
-<br/>The **map()** function provides an easy way to do exactly this and with less steps!
-<br/><br/>Check below how to write the same using **map()**:
+The **map()** function provides an easy way to do exactly this and with less steps!
+<br/>Check below how to write the same using **map()**:
 
 ```
 const newData = data.map(function(item) {
@@ -102,18 +101,18 @@ const newData = data.map(function(item) {
   }
 });
 ```
-<br/>Maybe your reaction be like:
+Maybe your reaction be like:
 ![WTF]({filename}/images/wtf.gif)
 
 <br/>But, keep calm, i'll explain every step!
-<br/><br/>When you execute **Array.map()**, to clear your mind in a _real-life_ example, you can think in something like:
+<br/>When you execute **Array.map()**, to clear your mind in a _real-life_ example, you can think in something like:
 ```
 1. The map() gets your Array;
 2. Loop through it, and, for each item it:
    1. Execute the function you've passed, passing the current item as an argument;
    2. Update the current item value, to the returned value from your function;
 ```
-<br/>So, this also can be re-written to something like:
+So, this also can be re-written to something like:
 
 ```
 function parseItem(item) {
@@ -126,13 +125,13 @@ function parseItem(item) {
 
 const newData = data.map(parseItem);
 ```
-<br/>It will produce the same result and has the same effect.
+It will produce the same result and has the same effect.
 
 And if you're familiar with ES6, you can re-write it to:
 ```
 const newData = data.map(({ id, name, location: { city } }) => ({ id, name, city }));
 ```
-<br/>But i'll not talk about ES6 now, maybe in another post! :P
+But i'll not talk about ES6 now, maybe in another post! :P
 <br/><br/>Using any of the examples above, if you run a **console.log(newData)**, you will receive:
 
 ```
@@ -154,6 +153,6 @@ const newData = data.map(({ id, name, location: { city } }) => ({ id, name, city
   }
 ]
 ```
-<br/>So, that's it guys, as expected!!
+So, that's it guys, as expected!!
 <br/>You can see the **JSFiddle** of this post <a href="https://jsfiddle.net/guilhermetoti/bju032cw/" target="_blank">here</a>
 <br/><br/>I hope you guys understand about the **map()** function, but, if you have any questions please comment below!

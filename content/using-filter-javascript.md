@@ -1,7 +1,6 @@
 Title: Using filter() in Javascript
 Summary: Learn how to easily filter Arrays using the Array.prototype.filter method!
 Date: 2017-07-09 23:38
-Image: js-logo.png
 Category: javascript
 Tags: javascript, functional programming
 
@@ -48,7 +47,7 @@ const data = [
   }
 ]
 ```
-<br/>Let's imagine that you want to get from this array, only the objects where the **location.state** are equal to **SP**.
+Let's imagine that you want to get from this array, only the objects where the **location.state** are equal to **SP**.
 
 Maybe on a first approach, you might be thinking on something like:
 ```
@@ -61,7 +60,7 @@ for (let index in data) {
   }
 }
 ```
-<br/>It would work, right? Right, but, we are creating another variable to handle the new data and looping through the **data** object, searching for a state equal to **SP** and then, pushing this object to the new variable.
+It would work, right? Right, but, we are creating another variable to handle the new data and looping through the **data** object, searching for a state equal to **SP** and then, pushing this object to the new variable.
 
 I think we can do better than this, dont we?
 
@@ -73,7 +72,7 @@ const newData = data.filter(function(currentElement) {
   return currentElement.location.state === 'SP';
 });
 ```
-<br/>The basic idea of the **filter()** method is:
+The basic idea of the **filter()** method is:
 ```
 - Pass to the filter() method a function who:
   - Receives the current element of the data array you're filtering;
@@ -84,15 +83,15 @@ const newData = data.filter(function(currentElement) {
 - Otherwise it will be just ignored;
 - Returns the new array with the filtered data;
 ```
-<br/>And if you are learning about **ES6**, the same code could be written as:
+And if you are learning about **ES6**, the same code could be written as:
 ```
 const newData = data.filter((currentElement) => currentElement.location.state === 'SP');
 ```
-<br/>Cool, huh? :D
-<br/> You can see the **JSFiddle** of this article <a href="https://jsfiddle.net/guilhermetoti/ab4gpvvt/" target="_blank">here</a>.
+Cool, huh? :D
+<br/><br/> You can see the **JSFiddle** of this article <a href="https://jsfiddle.net/guilhermetoti/ab4gpvvt/" target="_blank">here</a>.
 
 Problably at this moment you must be thinking about your old codes and how to refactor them to use the **filter()** method, right?
 
-Well, I hope so!
+<br/>Well, I hope so!
 
-That's it! If you guys have some question, please comment below!
+<br/>That's it! If you guys have some question, please comment below!
